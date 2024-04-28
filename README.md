@@ -6,9 +6,9 @@ Update hosts file on your PC like in this [instruction](https://www.nublue.co.uk
 
 Need to path these lines
 
-    127.0.0.1 www.alevelwebsite.com
-    0.0.0.0 www.alevelwebsite.com
-    <your-local-ip> (for example 192.168.0.4) www.alevelwebsite.com
+    127.0.0.1 www.redencywebsite.com
+    0.0.0.0 www.redencywebsite.com
+    <your-local-ip> (for example 192.168.0.4) www.redencywebsite.com
 
 ### Docker
 
@@ -16,14 +16,3 @@ Need to path these lines
 
 `docker-compose up`
 
-### Add-Migration
-
-`dotnet ef --startup-project Catalog/Catalog.Host migrations add InitialMigration --project Catalog/Catalog.Host`
-
-### Update-Migration
-
-`dotnet ef --startup-project Catalog/Catalog.Host database update InitialMigration --project Catalog/Catalog.Host`
-
-### Remove-Migration
-
-`dotnet ef --startup-project Catalog/Catalog.Host migrations remove --project Catalog/Catalog.Host -f`
