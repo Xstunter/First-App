@@ -62,9 +62,9 @@ namespace Board.Host.Controllers
         [HttpGet("/GetBoard")]
         [ProducesResponseType(typeof(BoardDto), (int)HttpStatusCode.OK)]
 
-        public async Task<IActionResult> GetBoard(GetBoardRequest request)
+        public async Task<IActionResult> GetBoard(int boardId)
         {
-            var isGet = await _boardService.GetBoardAsync(request.BoardId);
+            var isGet = await _boardService.GetBoardAsync(boardId);
             if (isGet != null)
             {
                 return Ok(isGet);

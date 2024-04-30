@@ -2,9 +2,9 @@
 
 namespace Board.Host.Models.Requests
 {
-    public class GetBoardRequest
+    public class DeleteCardRequest
     {
         [Required]
-        public int BoardId { get; set; }
+        public int CardId { get; set; }
     }
 }
