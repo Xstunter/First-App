@@ -1,4 +1,7 @@
 using Board.Host.Data;
+using Board.Host.Middlewares;
+using Board.Host.Repositories;
+using Board.Host.Repositories.Interfaces;
 using Board.Host.Services;
 using Board.Host.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +16,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IBoardService, BoardService>();
+builder.Services.AddTransient<IBoardRepository, BoardRepository>();    
+
 builder.Services.AddDbContextFactory<ApplicationDbContext>(opts => opts.UseNpgsql(configuration["ConnectionString"]));
 builder.Services.AddScoped<IDbContextWrapper<ApplicationDbContext>, DbContextWrapper<ApplicationDbContext>>();
 
@@ -25,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseAuthorization();
 
