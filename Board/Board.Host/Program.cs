@@ -1,4 +1,5 @@
 using Board.Host.Data;
+using Board.Host.Middlewares;
 using Board.Host.Repositories;
 using Board.Host.Repositories.Interfaces;
 using Board.Host.Services;
@@ -30,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseAuthorization();
 
