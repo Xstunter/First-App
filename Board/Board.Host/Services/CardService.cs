@@ -17,6 +17,11 @@ namespace Board.Host.Services
             _cardRepository = cardRepository;
         }
 
+        public Task<bool> ChangeListAsync(int cardId, int listId)
+        {
+            return ExecuteSafeAsync(() => _cardRepository.ChangeListAsync(cardId, listId));
+        }
+
         public Task<int> CreateCardAsync(string name, string description, string priority, int listId)
         {
             return ExecuteSafeAsync(() => _cardRepository.CreateCardAsync(name, description, priority, listId));
@@ -25,6 +30,11 @@ namespace Board.Host.Services
         public Task<bool> DeleteCardAsync(int id)
         {
             return ExecuteSafeAsync(() => _cardRepository.DeleteCardAsync(id));
+        }
+
+        public Task<IEnumerable<CardDto>> GetAllListsCardAsync(int listId)
+        {
+            return ExecuteSafeAsync(() => _cardRepository.GetAllListsCardAsync(listId));
         }
 
         public Task<CardDto> GetCardAsync(int id)

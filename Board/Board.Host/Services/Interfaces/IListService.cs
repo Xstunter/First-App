@@ -8,5 +8,6 @@ namespace Board.Host.Services.Interfaces
         public Task<bool> UpdateListAsync(int id, string name);
         public Task<bool> DeleteListAsync(int id);
         public Task<ListDto> GetListAsync(int id);
+        public Task<IEnumerable<ListDto>> GetAllListAsync(int boardId);
     }
 }

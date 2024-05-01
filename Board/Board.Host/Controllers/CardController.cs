@@ -60,12 +60,42 @@ namespace Board.Host.Controllers
                 return NotFound();
             }
         }
+        [HttpPatch("/ChangeListForCard")]
+        [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
+
+        public async Task<IActionResult> ChangeListForCard(ChangeListForCardRequest request)
+        {
+            var isChanged = await _cardService.ChangeListAsync(request.CardId, request.ListId);
+            if (isChanged)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [HttpGet("/GetCard")]
-        [ProducesResponseType(typeof(BoardDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CardDto), (int)HttpStatusCode.OK)]
 
         public async Task<IActionResult> GetCard(int cardId)
         {
             var isGet = await _cardService.GetCardAsync(cardId);
+            if (isGet != null)
+            {
+                return Ok(isGet);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        [HttpGet("/GetAllListsCard")]
+        [ProducesResponseType(typeof(IEnumerable<CardDto>), (int)HttpStatusCode.OK)]
+
+        public async Task<IActionResult> GetAllListsCard(int listId)
+        {
+            var isGet = await _cardService.GetAllListsCardAsync(listId);
             if (isGet != null)
             {
                 return Ok(isGet);

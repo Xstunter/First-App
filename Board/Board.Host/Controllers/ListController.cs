@@ -28,7 +28,11 @@ namespace Board.Host.Controllers
         public async Task<IActionResult> CreateList(CreateListRequest request)
         {
             var result = await _listService.CreateListAsync(request.StatusName, request.BoardId);
-            return Ok(result);
+            if (result != 0)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
         }
         [HttpDelete("/DeleteList")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
@@ -66,6 +70,21 @@ namespace Board.Host.Controllers
         public async Task<IActionResult> GetList(int listId)
         {
             var isGet = await _listService.GetListAsync(listId);
+            if (isGet != null)
+            {
+                return Ok(isGet);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        [HttpGet("/GetAllLists")]
+        [ProducesResponseType(typeof(IEnumerable<ListDto>), (int)HttpStatusCode.OK)]
+
+        public async Task<IActionResult> GetAllLists(int boardId)
+        {
+            var isGet = await _listService.GetAllListAsync(boardId);
             if (isGet != null)
             {
                 return Ok(isGet);

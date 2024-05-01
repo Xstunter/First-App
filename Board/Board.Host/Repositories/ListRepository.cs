@@ -21,15 +21,29 @@ namespace Board.Host.Repositories
         }
         public async Task<int> CreateListAsync(string name, int boardId)
         {
-            var list = await _dbContext.AddAsync(new ListEntity
+            try
             {
-                StatusName = name,
-                BoardId = boardId
-            });
+                var existingList = await _dbContext.Lists.FirstOrDefaultAsync(l => l.StatusName == name);
+                if (existingList != null)
+                {
+                    throw new InvalidOperationException($"List with name: '{name}' already exists.");
+                }
 
-            await _dbContext.SaveChangesAsync();
+                var list = await _dbContext.AddAsync(new ListEntity
+                {
+                    StatusName = name,
+                    BoardId = boardId
+                });
 
-            return list.Entity.ListId;
+                await _dbContext.SaveChangesAsync();
+
+                return list.Entity.ListId;
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogInformation(ex.Message);
+                return 0;
+            }
         }
 
         public async Task<bool> DeleteListAsync(int id)
@@ -54,6 +68,37 @@ namespace Board.Host.Repositories
                 _logger.LogInformation(ex.Message);
 
                 return false;
+            }
+        }
+
+        public async Task<IEnumerable<ListDto>> GetAllListAsync(int boardId)
+        {
+            try
+            {
+                var board = await _dbContext.Boards.FindAsync(boardId);
+
+                if (board == null)
+                {
+                    throw new KeyNotFoundException($"Board with ID {boardId} not found.");
+                }
+
+                var lists = await _dbContext.Lists
+                    .Where(d => d.BoardId == boardId)
+                    .Select(list => new ListDto()
+                    {
+                        ListId = list.ListId,
+                        StatusName = list.StatusName,
+                        BoardId = list.BoardId
+                    })
+                    .ToListAsync();
+
+                return lists;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation(ex.Message);
+
+                return null;
             }
         }
 
