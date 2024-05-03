@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ServiceStack.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Board.Host.Data.Entities
 {
@@ -6,6 +7,7 @@ namespace Board.Host.Data.Entities
     {
         [Key]
         public int ListId { get; set; }
+        [Unique]
         public string StatusName { get; set; }
         public int BoardId { get; set; }
         public BoardEntity Board { get; set; }

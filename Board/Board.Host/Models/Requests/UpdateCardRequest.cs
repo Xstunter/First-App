@@ -1,15 +1,16 @@
-﻿using Board.Host.Models.Dtos;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Board.Host.Models.Requests
 {
-    public class UpdateBoardRequest
+    public class UpdateCardRequest
     {
         [Required]
-        public int BoardId { get; set; }
+        public int CardId { get; set; }
         [MaxLength(50)]
         public string Name { get; set; }
         [MaxLength(500)]
         public string Description { get; set; }
+        [MaxLength(50)]
+        public string Priority { get; set; }
     }
 }

@@ -90,8 +90,15 @@ namespace Board.Host.Repositories
                     throw new ArgumentNullException($"Not found board with id:{id}");
                 }
 
-                board.Name = name;
-                board.Description = description;    
+                if (!string.IsNullOrEmpty(name) && name != "string")
+                {
+                    board.Name = name;
+                }
+
+                if (!string.IsNullOrEmpty(description) && description != "string")
+                {
+                    board.Description = description;
+                }
 
                 await _dbContext.SaveChangesAsync();
 
