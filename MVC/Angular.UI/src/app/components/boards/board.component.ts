@@ -1,21 +1,40 @@
-import {Component, Input} from '@angular/core'
+import {Component} from '@angular/core'
 import { IBoard } from '../../models/board'
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { HttpService } from '../../http.sevice';
+import { CreateBoardRequest } from '../../models/requests/createboard.request';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-board',
     standalone: true,
+    imports: [CommonModule],
     templateUrl: './board.component.html'
 })
 
 export class BoardComponent {
-    readonly _url = 'http://localhost:5000/GetBoard';
+    board: IBoard = { boardId: 0, name: '', description: '' };
 
-    constructor(private http: HttpClient) {}
+    constructor(private httpService: HttpService) {}
 
-    getBoard() : Observable<IBoard>{
-        return this.http.get<IBoard>(this._url + '?boardId=1');
+    getBoardNgOnInit(){
+        this.httpService.getBoard(this.board.boardId).subscribe(result=>{
+            this.board=result;
+            console.log(result);
+        })
     }
+    createBoardNgOnInit(){
+        let board : CreateBoardRequest = {Name : this.board.name, Description : this.board.description}
 
+        this.httpService.createBoard(board).subscribe(result=>{
+            this.board.boardId=result;
+            console.log(result);
+        })          
+    }
+    deleteBoardNgOnInit(){
+        let isDeleted : Boolean = false;
+        this.httpService.deleteBoard(this.board.boardId).subscribe(result=>{
+            isDeleted=result;
+            console.log(result);
+        })          
+    }
 }  

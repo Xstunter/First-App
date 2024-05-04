@@ -42,6 +42,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().WithExposedHeaders("Content-Disposition"));
+
 CreateDbIfNotExists(app);
 app.Run();
 
