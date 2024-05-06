@@ -1,16 +1,42 @@
-<div class="p-4">
-    <h1 class="text-3xl font-bold mb-4">Welcome to the Board Creator</h1>
-    <ng-container *ngIf="!showCreateForm; else createForm">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="getBoardNgOnInit()">Create Board</button>
-    </ng-container>
-    <ng-template #createForm>
-      <div class="mt-4">
-        <h2 class="text-2xl font-bold mb-2">Create New Board</h2>
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="boardName">Board Name:</label>
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="board.name" [(ngModel)]="board.name" placeholder="Enter board name"><br>
-        <label class="block text-gray-700 text-sm font-bold mb-2 mt-2" for="boardDescription">Board Description:</label>
-        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="board.description" [(ngModel)]="board.description" placeholder="Enter board description"></textarea><br>
-        <button class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="createBoardNgOnInit">Create Board</button>
-      </div>
-    </ng-template>
+<div class="container">
+
+  <ng-container *ngIf="!board.boardId; else existingBoard">
+    <div class="text-center mt-4">
+      <h1 class="text-3xl font-bold mb-4">Ласкаво просимо до створення дошки</h1>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openCreateBoardModal()">Створити нову дошку</button>
+    </div>
+  </ng-container>
+
+  <ng-template #existingBoard>
+    
+  </ng-template>
+
+  <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateBoardModal">
+    <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+    <div class="relative bg-white p-6 rounded-lg w-96">
+      <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeCreateBoardModal()">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold mb-4">Створити нову дошку</h2>
+      <form (ngSubmit)="createBoardNgOnInit()">
+        <div class="mb-4">
+          <label for="boardName" class="block text-gray-700 font-bold mb-2">Ім'я дошки:</label>
+          <input type="text" id="boardName" [(ngModel)]="board.name" name="boardName"
+            class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+            placeholder="Введіть ім'я дошки">
+        </div>
+        <div class="mb-6">
+          <label for="boardDescription" class="block text-gray-700 font-bold mb-2">Опис дошки:</label>
+          <textarea id="boardDescription" [(ngModel)]="board.description" name="boardDescription"
+            class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+            placeholder="Введіть опис дошки"></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Створити</button>
+      </form>
+    </div>
   </div>
+
+</div>
