@@ -30,10 +30,10 @@ export class ListComponent {
         this.showCreateListModal = true;
     }
     
-      closeCreateListModal() {
+    closeCreateListModal() {
         this.showCreateListModal = false;
     }
-
+    
     toggleMenu(list: IList) {
         if (this.isMenuOpen[list.listId]) {
             this.isMenuOpen[list.listId] = false;
@@ -41,6 +41,7 @@ export class ListComponent {
             this.isMenuOpen[list.listId] = true;
         }
     }
+      
     getAllListsNgOnInit(){
         this.httpService.getAllLists(this.boardId).subscribe(result=>{
             this.listMas = result;
