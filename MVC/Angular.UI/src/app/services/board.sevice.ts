@@ -1,13 +1,13 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, inject } from "@angular/core";
-import { IBoard } from "./models/board";
-import { CreateBoardRequest } from "./models/requests/createboard.request";
+import { Injectable } from "@angular/core";
+import { IBoard } from "../models/board";
+import { CreateBoardRequest } from "../models/requests/createboard.request";
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class HttpService {
+export class HttpBoardService {
     apiUrl = "http://localhost:5000";
 
     constructor(private http: HttpClient) {}

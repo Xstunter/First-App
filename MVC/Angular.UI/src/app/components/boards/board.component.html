@@ -1,3 +1,4 @@
+
 <div class="container">
 
   <ng-container *ngIf="!board.boardId; else existingBoard">
@@ -8,7 +9,11 @@
   </ng-container>
 
   <ng-template #existingBoard>
-    
+    <div>
+      <h1 class="text-3xl font-bold mb-4">{{ board.name }}</h1>
+      <p class="text-lg mb-4">{{ board.description }}</p>
+    </div>
+    <app-list [boardId]="board.boardId"> </app-list>
   </ng-template>
 
   <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateBoardModal">

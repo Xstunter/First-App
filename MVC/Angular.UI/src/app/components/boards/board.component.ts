@@ -1,23 +1,24 @@
 import { Component } from '@angular/core'
 import { IBoard } from '../../models/board'
-import { HttpService } from '../../http.sevice';
+import { HttpBoardService } from '../../services/board.sevice';
 import { CreateBoardRequest } from '../../models/requests/createboard.request';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ListComponent } from '../lists/list.component';
 
 @Component({
     selector: 'app-board',
     standalone: true,
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, ListComponent],
     templateUrl: './board.component.html'
 })
 
 export class BoardComponent {
 
-    board: IBoard = { boardId: 0, name: '', description: '' };
+    board : IBoard = {boardId : 1, name : 'Aboba    ', description : ''};
     showCreateBoardModal = false;
 
-    constructor(private httpService: HttpService) {}
+    constructor(private httpService: HttpBoardService) {}
 
     openCreateBoardModal() {
         this.showCreateBoardModal = true;
@@ -29,7 +30,7 @@ export class BoardComponent {
 
     getBoardNgOnInit(){
         this.httpService.getBoard(this.board.boardId).subscribe(result=>{
-            this.board=result;
+            this.board = result;
             console.log(result);
         })
     }
