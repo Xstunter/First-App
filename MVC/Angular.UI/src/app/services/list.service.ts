@@ -25,8 +25,8 @@ export class HttpListService {
         const requestBody = { listId: id };
         return this.http.request<Boolean>('delete', `${this.apiUrl}/DeleteList`, { body: requestBody });
     }
-    updateList(id : number){
-        const requestBody = { listId: id };
+    updateList(id : number, name : string){
+        const requestBody = { listId: id, statusName: name};
         return this.http.request<Boolean>('patch', `${this.apiUrl}/UpdatedList`, { body: requestBody });
     }
 }

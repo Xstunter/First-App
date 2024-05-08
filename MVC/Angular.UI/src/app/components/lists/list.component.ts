@@ -22,14 +22,24 @@ export class ListComponent {
     listMas : IList[] = []; //For GetAllList
     
     showCreateListModal = false;
+    showEditModal = false;
+
     isMenuOpen: { [key: string]: boolean } = {};
 
     constructor(private httpService: HttpListService) {}
+    
+    openEditModal(id : number, editName : string) {
+        this.list.listId = id;
+        this.list.statusName = editName;
+        this.showEditModal = true;
+    }
+    closeEditModal() {
+        this.showEditModal = false;
+    }
 
     openCreateListModal() {
         this.showCreateListModal = true;
     }
-    
     closeCreateListModal() {
         this.showCreateListModal = false;
     }
@@ -41,7 +51,11 @@ export class ListComponent {
             this.isMenuOpen[list.listId] = true;
         }
     }
-      
+    
+    ngOnInit() {
+        this.getAllListsNgOnInit();
+    }
+
     getAllListsNgOnInit(){
         this.httpService.getAllLists(this.boardId).subscribe(result=>{
             this.listMas = result;
@@ -68,13 +82,14 @@ export class ListComponent {
             this.getAllListsNgOnInit();
         })          
     }
-    updateListNgOnInit(list : IList){
+    updateListNgOnInit(id : number, editName : string){
         let isUpdated : Boolean = false;
 
-        this.httpService.updateList(list.listId).subscribe(result=>{
+        this.httpService.updateList(id, editName).subscribe(result=>{
             isUpdated=result;
             console.log(result);
             this.getAllListsNgOnInit();
-        })          
+        })
+        this.closeEditModal();            
     }
 }  
