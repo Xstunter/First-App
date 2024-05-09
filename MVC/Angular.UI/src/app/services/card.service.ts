@@ -29,4 +29,8 @@ export class HttpCardService {
         const requestBody = { cardId: id, name : cardName, description : cardDescription, priority : cardPriority};
         return this.http.request<Boolean>('patch', `${this.apiUrl}/UpdatedCard`, { body: requestBody });
     }
+    changeListForCard(cardId : number, listId : number){
+        const requestBody = { cardId: cardId, listId : listId};
+        return this.http.request<Boolean>('patch', `${this.apiUrl}/ChangeListForCard`, { body: requestBody });
+    }
 }

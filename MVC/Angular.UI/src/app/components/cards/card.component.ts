@@ -5,6 +5,7 @@ import { Input } from '@angular/core';
 import { ICard } from '../../models/card';
 import { HttpCardService } from '../../services/card.service';
 import { CreateCardRequest } from '../../models/requests/createcard.request';
+import { ListComponent } from '../lists/list.component';
 
 @Component({
     selector: 'app-card',
@@ -15,17 +16,25 @@ import { CreateCardRequest } from '../../models/requests/createcard.request';
 
 export class CardComponent{
     @Input() listId!: number;
+    @Input() listsName! : {name : string, id : number}[];
 
     showCreateCardModal = false;
     showEditModal = false;
+
+    selectedListId!: number;
 
     card : ICard = {cardId : 0, name : '', description : '', priority : '',  listId : 0, createdAt : ''};
     cardMas : ICard[] = [];
 
     isMenuOpen: { [key: string]: boolean } = {};
 
-    constructor(private httpService: HttpCardService) {}
+    constructor(private httpService: HttpCardService, private listComponent : ListComponent) {} // Bad listComponent inject, this only for getAllListsNgOnInit for method changeListForCardNgOnInit
     
+    onSaveClick() {
+        this.updateCardNgOnInit(this.card.cardId, this.card.name, this.card.description, this.card.priority);
+        this.changeListForCardNgOnInit(this.card.cardId, this.selectedListId);
+    }
+
     openEditModal(id : number, editName : string, editDescription : string, editPriority : string) {
         this.card.cardId = id;
         this.card.name = editName;
@@ -60,7 +69,6 @@ export class CardComponent{
             console.log(result);
         })
     }
-
     createCardNgOnInit(){
         let card : CreateCardRequest = { Name : this.card.name, Description : this.card.description, Priority : this.card.priority, ListId : this.listId}
 
@@ -88,6 +96,25 @@ export class CardComponent{
             console.log(result);
             this.getAllCardsNgOnInit();
         })         
+        this.closeEditModal();
     }
+    changeListForCardNgOnInit(cardId : number, listId : number){
+        let isChanged : Boolean = false;
 
+        this.httpService.changeListForCard(cardId, listId).subscribe(result=>{
+            isChanged=result;
+            console.log(result);
+            this.listComponent.getAllListsNgOnInit();
+        })         
+    }
+    formatDateTime(dateTimeString: string): string {
+        const options: Intl.DateTimeFormatOptions = {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          weekday: 'long' as 'long' 
+        };
+        const dateTime = new Date(dateTimeString);
+        return dateTime.toLocaleDateString('en-US', options);
+      }
 }

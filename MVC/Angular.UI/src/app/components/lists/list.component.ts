@@ -20,7 +20,8 @@ export class ListComponent {
 
     list : IList = {listId : 0, statusName : '', boardId : 0}; //For change one list
     listMas : IList[] = []; //For GetAllList
-    
+    listsName : {name : string, id : number}[] = []; // For Change list for card
+
     showCreateListModal = false;
     showEditModal = false;
 
@@ -54,6 +55,20 @@ export class ListComponent {
     
     ngOnInit() {
         this.getAllListsNgOnInit();
+        this.listMas.forEach(list => {
+            this.saveList(list.statusName, list.listId);
+        });        
+    }
+
+    saveList(name: string, id: number) {
+
+        const existingList = this.listsName.find(list => list.name === name);
+
+        if (existingList) {
+          existingList.id = id;
+        } else {
+          this.listsName.push({ name, id });
+        }
     }
 
     getAllListsNgOnInit(){

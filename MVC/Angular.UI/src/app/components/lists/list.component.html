@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="getAllListsNgOnInit()">Створити новий список</button>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openCreateListModal()">Create New List</button>
 
   <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateListModal">
       <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
@@ -9,13 +9,13 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
           </button>
-          <h2 class="text-2xl font-bold mb-4">Створити новий список</h2>
+          <h2 class="text-2xl font-bold mb-4">Create New List</h2>
           <form (ngSubmit)="createListNgOnInit()">
               <div class="mb-4">
-                  <label for="statusName" class="block text-gray-700 font-bold mb-2">Ім'я списку:</label>
-                  <input type="text" id="statusName" [(ngModel)]="list.statusName" name="statusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Введіть ім'я списку">
+                  <label for="statusName" class="block text-gray-700 font-bold mb-2">List name:</label>
+                  <input type="text" id="statusName" [(ngModel)]="list.statusName" name="statusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter list name">
               </div>
-              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Створити</button>
+              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
           </form>
       </div>
   </div>
@@ -50,7 +50,7 @@
                               <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
                           </svg>
                       </button>
-                      <div *ngIf="isMenuOpen[list.listId]" class="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" style="z-index: 999;">
+                      <div *ngIf="isMenuOpen[list.listId]" class="absolute right-0 mt-2 w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" style="z-index: 999;">
                         <div class="py-1" role="none">
                             <button (click)="openEditModal(list.listId, list.statusName)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-0">Edit</button>
                             <button (click)="deleteListNgOnInit(list)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-1"><p style="color: red;">Delete</p></button>
@@ -59,7 +59,7 @@
                   </div>
               </div>
               <div>
-                  <app-card [listId]="list.listId"></app-card>
+                  <app-card [listId]="list.listId" [listsName]="listsName"></app-card>
               </div>
           </div>
       </div>
