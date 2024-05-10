@@ -22,6 +22,8 @@ builder.Services.AddTransient<IListService, ListService>();
 builder.Services.AddTransient<IListRepository, ListRepository>();
 builder.Services.AddTransient<ICardService, CardService>();
 builder.Services.AddTransient<ICardRepository, CardRepository>();
+builder.Services.AddTransient<IHistoryService, HistoryService>();
+builder.Services.AddTransient<IHistoryRepository, HistoryRepository>();
 
 builder.Services.AddDbContextFactory<ApplicationDbContext>(opts => opts.UseNpgsql(configuration["ConnectionString"]));
 builder.Services.AddScoped<IDbContextWrapper<ApplicationDbContext>, DbContextWrapper<ApplicationDbContext>>();

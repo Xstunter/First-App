@@ -3,4 +3,5 @@ export class CreateCardRequest{
     Description! : string;
     Priority! : string;
     ListId! : number;
+    BoardId! : number;
 }

@@ -8,5 +8,7 @@ namespace Board.Host.Models.Requests
         public int CardId { get; set; }
         [Required]
         public int ListId { get; set; }
+        [Required]
+        public int BoardId { get; set; }
     }
 }

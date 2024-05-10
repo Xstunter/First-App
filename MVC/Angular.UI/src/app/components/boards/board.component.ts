@@ -5,17 +5,18 @@ import { CreateBoardRequest } from '../../models/requests/createboard.request';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from '../lists/list.component';
+import { HistoryComponent } from '../histories/history.component';
 
 @Component({
     selector: 'app-board',
     standalone: true,
-    imports: [CommonModule, FormsModule, ListComponent],
+    imports: [CommonModule, FormsModule, ListComponent, HistoryComponent],
     templateUrl: './board.component.html'
 })
 
 export class BoardComponent {
 
-    board : IBoard = {boardId : 1, name : 'Aboba    ', description : ''};
+    board : IBoard = {boardId : 1, name : 'aaa', description : ''};
     showCreateBoardModal = false;
 
     constructor(private httpService: HttpBoardService) {}

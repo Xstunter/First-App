@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IList } from "../models/list";
+import { ICard } from "../models/card";
 import { CreateListRequest } from "../models/requests/createlist.request";
 
 @Injectable({

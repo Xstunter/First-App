@@ -1,0 +1,19 @@
+
+<div class="mt-2">
+  <button *ngIf="!historyVisible" class="bg-blue-500 text-white px-4 py-2 rounded" (click)="toggleHistory()">
+    Show History
+  </button>
+</div>
+
+<div *ngIf="historyVisible" class="fixed inset-y-0 right-0 flex flex-col bg-white border-l border-gray-200 shadow-lg w-64">
+  <button class="bg-blue-500 text-white px-4 py-2 rounded-t" (click)="toggleHistory()">
+    Hide History
+  </button>
+  <ul class="history-list overflow-y-auto">
+    <li *ngFor="let history of historyMas.slice(0, 20)" class="border-b border-gray-200 py-2 px-4">
+      <p>{{ history.type }}</p>
+      <p>{{ history.date | date:'medium' }}</p> <!-- Форматируем дату в формат 'medium' -->
+    </li>
+  </ul>
+  <p *ngIf="historyMas.length === 0" class="px-4 py-2">No history available</p>
+</div>

@@ -17,6 +17,7 @@ import { ListComponent } from '../lists/list.component';
 export class CardComponent{
     @Input() listId!: number;
     @Input() listsName! : {name : string, id : number}[];
+    @Input() boardId : number = 0;
 
     showCreateCardModal = false;
     showEditModal = false;
@@ -27,6 +28,7 @@ export class CardComponent{
     cardMas : ICard[] = [];
 
     isMenuOpen: { [key: string]: boolean } = {};
+    cardCountPerList: { [key: number]: number } = {};
 
     constructor(private httpService: HttpCardService, private listComponent : ListComponent) {} // Bad listComponent inject, this only for getAllListsNgOnInit for method changeListForCardNgOnInit
     
@@ -67,10 +69,11 @@ export class CardComponent{
         this.httpService.getAllCards(this.listId).subscribe(result=>{
             this.cardMas = result;
             console.log(result);
+            this.countCardsPerList();
         })
     }
     createCardNgOnInit(){
-        let card : CreateCardRequest = { Name : this.card.name, Description : this.card.description, Priority : this.card.priority, ListId : this.listId}
+        let card : CreateCardRequest = { Name : this.card.name, Description : this.card.description, Priority : this.card.priority, ListId : this.listId, BoardId : this.boardId}
 
         this.httpService.createCard(card).subscribe(result=>{
             this.card.cardId = result;
@@ -82,7 +85,7 @@ export class CardComponent{
     deleteCardNgOnInit(card : ICard){
         let isDeleted : Boolean = false;
 
-        this.httpService.deleteCard(card.cardId).subscribe(result=>{
+        this.httpService.deleteCard(card.cardId, this.boardId).subscribe(result=>{
             isDeleted=result;
             console.log(result);
             this.getAllCardsNgOnInit();
@@ -91,7 +94,7 @@ export class CardComponent{
     updateCardNgOnInit(id : number, cardName : string, cardDescription : string, cardPriority : string){
         let isUpdated : Boolean = false;
 
-        this.httpService.updateCard(id, cardName, cardDescription, cardPriority).subscribe(result=>{
+        this.httpService.updateCard(id, cardName, cardDescription, cardPriority, this.boardId).subscribe(result=>{
             isUpdated=result;
             console.log(result);
             this.getAllCardsNgOnInit();
@@ -101,7 +104,7 @@ export class CardComponent{
     changeListForCardNgOnInit(cardId : number, listId : number){
         let isChanged : Boolean = false;
 
-        this.httpService.changeListForCard(cardId, listId).subscribe(result=>{
+        this.httpService.changeListForCard(cardId, listId, this.boardId).subscribe(result=>{
             isChanged=result;
             console.log(result);
             this.listComponent.getAllListsNgOnInit();
@@ -116,5 +119,15 @@ export class CardComponent{
         };
         const dateTime = new Date(dateTimeString);
         return dateTime.toLocaleDateString('en-US', options);
-      }
+    }
+
+    countCardsPerList() {
+        this.cardCountPerList = {};
+        this.listsName.forEach(list => {
+          this.httpService.getAllCards(list.id).subscribe(cards => {
+            this.cardCountPerList[list.id] = cards.length;
+          });
+        });
+    }
+
 }

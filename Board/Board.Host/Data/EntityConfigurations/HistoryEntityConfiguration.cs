@@ -21,6 +21,11 @@ namespace Board.Host.Data.EntityConfigurations
 
             builder.Property(ci => ci.Date)
                 .IsRequired(true);
+
+            builder.HasOne(ci => ci.Board)
+                .WithMany(ci => ci.Histories)
+                .HasForeignKey(ci => ci.BoardId)
+                .IsRequired(true);
         }
     }
 }

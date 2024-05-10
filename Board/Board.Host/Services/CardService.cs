@@ -17,19 +17,19 @@ namespace Board.Host.Services
             _cardRepository = cardRepository;
         }
 
-        public Task<bool> ChangeListAsync(int cardId, int listId)
+        public Task<bool> ChangeListAsync(int cardId, int listId, int boardId)
         {
-            return ExecuteSafeAsync(() => _cardRepository.ChangeListAsync(cardId, listId));
+            return ExecuteSafeAsync(() => _cardRepository.ChangeListAsync(cardId, listId, boardId));
         }
 
-        public Task<int> CreateCardAsync(string name, string description, string priority, int listId)
+        public Task<int> CreateCardAsync(string name, string description, string priority, int listId, int boardId)
         {
-            return ExecuteSafeAsync(() => _cardRepository.CreateCardAsync(name, description, priority, listId));
+            return ExecuteSafeAsync(() => _cardRepository.CreateCardAsync(name, description, priority, listId, boardId));
         }
 
-        public Task<bool> DeleteCardAsync(int id)
+        public Task<bool> DeleteCardAsync(int id, int boardId)
         {
-            return ExecuteSafeAsync(() => _cardRepository.DeleteCardAsync(id));
+            return ExecuteSafeAsync(() => _cardRepository.DeleteCardAsync(id, boardId));
         }
 
         public Task<IEnumerable<CardDto>> GetAllListsCardAsync(int listId)
@@ -42,9 +42,9 @@ namespace Board.Host.Services
             return ExecuteSafeAsync(() => _cardRepository.GetCardAsync(id));
         }
 
-        public Task<bool> UpdateCardAsync(int id, string name, string description, string priority)
+        public Task<bool> UpdateCardAsync(int id, string name, string description, string priority, int boardId)
         {
-            return ExecuteSafeAsync(() => _cardRepository.UpdateCardAsync(id, name, description, priority));
+            return ExecuteSafeAsync(() => _cardRepository.UpdateCardAsync(id, name, description, priority, boardId));
         }
     }
 }

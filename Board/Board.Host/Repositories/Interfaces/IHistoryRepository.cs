@@ -1,6 +1,10 @@
-﻿namespace Board.Host.Repositories.Interfaces
+﻿using Board.Host.Models.Dtos;
+
+namespace Board.Host.Repositories.Interfaces
 {
-    public class IHistoryRepository
+    public interface IHistoryRepository
     {
+        public Task AddHistory(string type, int boardId);
+        public Task<IEnumerable<HistoryDto>> GetBoardHistory(int boardId);
     }
 }

@@ -54,27 +54,38 @@ export class ListComponent {
     }
     
     ngOnInit() {
-        this.getAllListsNgOnInit();
-        this.listMas.forEach(list => {
+        this.getAllListsNgOnInit();    
+    }
+
+    ngDoCheck() {
+            this.listMas.forEach(list => {
             this.saveList(list.statusName, list.listId);
-        });        
+            });
     }
 
     saveList(name: string, id: number) {
 
-        const existingList = this.listsName.find(list => list.name === name);
+            const existingList = this.listsName.find(list => list.name === name);
 
-        if (existingList) {
-          existingList.id = id;
-        } else {
-          this.listsName.push({ name, id });
-        }
+            if (existingList) {
+            existingList.id = id;
+            } else {
+            this.listsName.push({ name, id });
+            }
+    }
+
+    updateListsName() {
+        this.listsName = [];
+        this.listMas.forEach(list => {
+          this.saveList(list.statusName, list.listId);
+        });
     }
 
     getAllListsNgOnInit(){
         this.httpService.getAllLists(this.boardId).subscribe(result=>{
             this.listMas = result;
             console.log(result);
+            this.updateListsName();
         })
     }
 

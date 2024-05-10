@@ -12,6 +12,5 @@ namespace Board.Host.Data.Entities
         public DateTime CreatedAt { get; set; }
         public int ListId { get; set; }
         public ListEntity List { get; set; }
-        public ICollection<HistoryEntity> Histories { get; set; }
     }
 }

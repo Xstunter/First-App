@@ -6,5 +6,7 @@ namespace Board.Host.Models.Requests
     {
         [Required]
         public int CardId { get; set; }
+        [Required]
+        public int BoardId { get; set; }
     }
 }
