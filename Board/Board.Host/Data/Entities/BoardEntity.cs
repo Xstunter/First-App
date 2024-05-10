@@ -9,6 +9,6 @@ namespace Board.Host.Data.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<ListEntity> Lists { get; set; }
-        public HistoryEntity History { get; set; }
+        public ICollection<HistoryEntity> Histories { get; set; }
     }
 }

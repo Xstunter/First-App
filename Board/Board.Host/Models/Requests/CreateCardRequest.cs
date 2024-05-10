@@ -15,5 +15,7 @@ namespace Board.Host.Models.Requests
         public string Priority { get; set; }
         [Required]
         public int ListId { get; set; }
+        [Required]
+        public int BoardId { get; set; }
     }
 }

@@ -12,16 +12,19 @@ namespace Board.Host.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly ILogger<CardRepository> _logger;
+        private readonly IHistoryService _historyService;
 
         public CardRepository(
             IDbContextWrapper<ApplicationDbContext> dbContextWrapper,
-            ILogger<CardRepository> logger)
+            ILogger<CardRepository> logger,
+            IHistoryService historyService)
         {
             _dbContext = dbContextWrapper.DbContext;
             _logger = logger;
+            _historyService = historyService;
         }
 
-        public async Task<bool> ChangeListAsync(int cardId, int listId)
+        public async Task<bool> ChangeListAsync(int cardId, int listId, int boardId)
         {
             try
             {
@@ -43,6 +46,8 @@ namespace Board.Host.Repositories
 
                 await _dbContext.SaveChangesAsync();
 
+                await _historyService.AddHistory($"You moved card {card.Name} to {list.StatusName}", boardId);
+
                 return true;
             }
             catch (Exception ex)
@@ -53,7 +58,7 @@ namespace Board.Host.Repositories
             }
         }
 
-        public async Task<int> CreateCardAsync(string name, string description, string priority, int listId)
+        public async Task<int> CreateCardAsync(string name, string description, string priority, int listId, int boardId)
         {
             var card = await _dbContext.AddAsync(new CardEntity
             {
@@ -64,12 +69,14 @@ namespace Board.Host.Repositories
                 ListId = listId
             });
 
+            await _historyService.AddHistory($"You added card {name}", boardId);
+
             await _dbContext.SaveChangesAsync();
 
             return card.Entity.CardId;
         }
 
-        public async Task<bool> DeleteCardAsync(int id)
+        public async Task<bool> DeleteCardAsync(int id, int boardId)
         {
             try
             {
@@ -79,6 +86,8 @@ namespace Board.Host.Repositories
                 {
                     throw new ArgumentNullException($"Not found card with id:{id}");
                 }
+
+                await _historyService.AddHistory($"You delete card {card.Name}", boardId);
 
                 _dbContext.Cards.Remove(card);
 
@@ -149,7 +158,7 @@ namespace Board.Host.Repositories
             }
         }
 
-        public async Task<bool> UpdateCardAsync(int id, string name, string description, string priority)
+        public async Task<bool> UpdateCardAsync(int id, string name, string description, string priority, int boardId)
         {
             try
             {
@@ -162,16 +171,28 @@ namespace Board.Host.Repositories
 
                 if (!string.IsNullOrEmpty(name) && name != "string")
                 {
+                    if (card.Name != name)
+                    {
+                        await _historyService.AddHistory($"You renamed card {card.Name} to {name}", boardId);
+                    }
                     card.Name = name;
                 }
 
                 if (!string.IsNullOrEmpty(description) && description != "string")
                 {
+                    if (card.Description != description)
+                    {
+                        await _historyService.AddHistory($"You redescription card {card.Description} to {description}", boardId);
+                    }
                     card.Description = description;
                 }
 
                 if (!string.IsNullOrEmpty(priority) && priority != "string")
                 {
+                    if (card.Priority != priority)
+                    {
+                        await _historyService.AddHistory($"You change the priotity {name} from {card.Priority} to {priority}", boardId);
+                    }
                     card.Priority = priority;
                 }
 

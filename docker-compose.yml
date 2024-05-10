@@ -34,6 +34,15 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5433:5432
+  
+  nginx:
+    container_name: lde.angular.api
+    build:
+      context: ./MVC/Angular.UI 
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+
 networks:
   default:
     driver: bridge

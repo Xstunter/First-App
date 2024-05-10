@@ -12,5 +12,7 @@ namespace Board.Host.Models.Requests
         public string Description { get; set; }
         [MaxLength(50)]
         public string Priority { get; set; }
+        [Required]
+        public int BoardId { get; set; }
     }
 }

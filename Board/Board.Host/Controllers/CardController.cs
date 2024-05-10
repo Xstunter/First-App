@@ -27,7 +27,7 @@ namespace Board.Host.Controllers
 
         public async Task<IActionResult> CreateCard(CreateCardRequest request)
         {
-            var result = await _cardService.CreateCardAsync(request.Name, request.Description, request.Priority, request.ListId);
+            var result = await _cardService.CreateCardAsync(request.Name, request.Description, request.Priority, request.ListId, request.BoardId);
             return Ok(result);
         }
         [HttpDelete("/DeleteCard")]
@@ -35,7 +35,7 @@ namespace Board.Host.Controllers
 
         public async Task<IActionResult> DeleteCard(DeleteCardRequest request)
         {
-            var isDeleted = await _cardService.DeleteCardAsync(request.CardId);
+            var isDeleted = await _cardService.DeleteCardAsync(request.CardId, request.BoardId);
             if (isDeleted)
             {
                 return Ok();
@@ -50,7 +50,7 @@ namespace Board.Host.Controllers
 
         public async Task<IActionResult> UpdateCard(UpdateCardRequest request)
         {
-            var isUpdated = await _cardService.UpdateCardAsync(request.CardId, request.Name, request.Description, request.Priority);
+            var isUpdated = await _cardService.UpdateCardAsync(request.CardId, request.Name, request.Description, request.Priority, request.BoardId);
             if (isUpdated)
             {
                 return Ok();
@@ -65,7 +65,7 @@ namespace Board.Host.Controllers
 
         public async Task<IActionResult> ChangeListForCard(ChangeListForCardRequest request)
         {
-            var isChanged = await _cardService.ChangeListAsync(request.CardId, request.ListId);
+            var isChanged = await _cardService.ChangeListAsync(request.CardId, request.ListId, request.BoardId);
             if (isChanged)
             {
                 return Ok();

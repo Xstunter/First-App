@@ -23,10 +23,6 @@ namespace Board.Host.Data.EntityConfigurations
                 .IsRequired(true)
                 .HasMaxLength(500);
 
-            builder.HasOne(ci => ci.History)
-                .WithOne(ci => ci.Board)
-                .HasForeignKey<HistoryEntity>(ci => ci.BoardId)
-                .IsRequired(true);
         }
     }
 }
