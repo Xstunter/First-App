@@ -1,3 +1,5 @@
+###Docker dont work
+
 # SETUP
 
 ### Hosts file
