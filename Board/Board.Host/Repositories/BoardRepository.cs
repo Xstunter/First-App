@@ -58,6 +58,41 @@ namespace Board.Host.Repositories
             }
         }
 
+        public async Task<IEnumerable<BoardDto>> GetAllBoardAsync()
+        {
+            try
+            {
+                var boards = await _dbContext.Boards.ToListAsync();
+
+                if (boards == null)
+                {
+                    throw new ArgumentNullException($"Boards didnt find");
+                }
+
+                List<BoardDto> results = new List<BoardDto>();
+
+                foreach (var board in boards)
+                {
+                    var result = new BoardDto()
+                    {
+                        BoardId = board.BoardId,
+                        Name = board.Name,
+                        Description = board.Description,
+                    };
+
+                    results.Add(result);
+                }
+
+                return results;
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogInformation(ex.Message);
+
+                return null;
+            }
+        }
+
         public async Task<BoardDto> GetBoardAsync(int id)
         {
             try

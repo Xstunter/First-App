@@ -44,16 +44,9 @@ namespace Board.Host.Repositories
         {
             try
             {
-                var history = await _dbContext.Histories.FindAsync(boardId);
-
-                if (history == null)
-                {
-                    throw new KeyNotFoundException($"History with BoardID {boardId} not found.");
-                }
-
                 var histories = await _dbContext.Histories
-                    .Where(d => d.BoardId == boardId)
-                    .Select(history => new HistoryDto()
+                    .Where(history => history.BoardId == boardId)
+                    .Select(history => new HistoryDto
                     {
                         HistoryId = history.HistoryId,
                         Type = history.Type,
@@ -66,9 +59,8 @@ namespace Board.Host.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.Message);
-
-                return null;
+                _logger.LogError(ex, $"Error while getting histories for board with ID {boardId}");
+                throw;
             }
         }
     }
