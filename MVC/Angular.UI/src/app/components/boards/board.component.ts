@@ -16,7 +16,7 @@ import { HistoryComponent } from '../histories/history.component';
 
 export class BoardComponent {
 
-    board : IBoard = {boardId : 1, name : 'aaa', description : ''};
+    board : IBoard = {boardId : 0, name : '', description : ''};
     showCreateBoardModal = false;
 
     constructor(private httpService: HttpBoardService) {}
