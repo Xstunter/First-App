@@ -1,106 +1,106 @@
 <div class="container">
-      <div>({{ cardCountPerList[listId] || 0 }})</div>
-      
-      <div class="container">
-        <div class="flex justify-center">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openCreateCardModal()">Create new card</button>
-        </div>
+    <div>({{ cardCountPerList[listId] || 0 }})</div>
+    
+    <div class="container">
+      <div class="flex justify-center">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openCreateCardModal()">Create new card</button>
       </div>
-
-    <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateCardModal">
-        <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
-        <div class="relative bg-white p-6 rounded-lg w-96">
-            <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeCreateCardModal()">
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-4">Create new card</h2>
-            <form (ngSubmit)="createCardNgOnInit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="mb-4">
-                    <label for="Name" class="block text-gray-700 font-bold mb-2">Name:</label>
-                    <input type="text" id="Name" [(ngModel)]="card.name" name="Name" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card name">
-                </div>
-                <div class="mb-4">
-                    <label for="Priority" class="block text-gray-700 font-bold mb-2">Priority:</label>
-                    <select [(ngModel)]="card.priority" id="Priority" name="Priority" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
-                        <option value="" disabled selected hidden  class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select priority</option>
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="Description" class="block text-gray-700 font-bold mb-2">Description:</label>
-                    <textarea id="Description" [(ngModel)]="card.description" name="Description" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card description"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
-            </form>
-        </div>
     </div>
 
-    <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showEditModal">
-        <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
-        <div class="relative bg-white p-6 rounded-lg w-96">
-            <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeEditModal()">
-                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-4">Edit Card</h2>
-            <form (ngSubmit)="onSaveClick()">
-                <div class="mb-4">
-                    <label for="editName" class="block text-gray-700 font-bold mb-2">New Card Name:</label>
-                    <input type="text" id="editName" [(ngModel)]="card.name" name="editName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter new list name">
-                </div>
-                <div class="mb-4">
-                    <label for="Priority" class="block text-gray-700 font-bold mb-2">Priority:</label>
-                    <select [(ngModel)]="card.priority" id="Priority" name="Priority" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
-                        <option value="" disabled selected hidden class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select priority</option>
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="List" class="block text-gray-700 font-bold mb-2">Select List:</label>
-                    <select [(ngModel)]="selectedListId" id="List" name="List" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
-                        <option value="" disabled selected hidden class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select list</option>
-                        <option *ngFor="let listItem of listsName" [value]="listItem.id">{{ listItem.name }}</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="Description" class="block text-gray-700 font-bold mb-2">Description:</label>
-                    <textarea id="Description" [(ngModel)]="card.description" name="Description" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card description"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save</button>
-            </form>
-        </div>
-    </div>
+  <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateCardModal">
+      <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+      <div class="relative bg-white p-6 rounded-lg w-96">
+          <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeCreateCardModal()">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+          <h2 class="text-2xl font-bold mb-4">Create new card</h2>
+          <form (ngSubmit)="createCardNgOnInit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+              <div class="mb-4">
+                  <label for="Name" class="block text-gray-700 font-bold mb-2">Name:</label>
+                  <input type="text" id="Name" [(ngModel)]="card.name" name="Name" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card name">
+              </div>
+              <div class="mb-4">
+                  <label for="Priority" class="block text-gray-700 font-bold mb-2">Priority:</label>
+                  <select [(ngModel)]="card.priority" id="Priority" name="Priority" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+                      <option value="" disabled selected hidden  class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select priority</option>
+                      <option value="Low">Low</option>
+                      <option value="Medium">Medium</option>
+                      <option value="High">High</option>
+                  </select>
+              </div>
+              <div class="mb-4">
+                  <label for="Description" class="block text-gray-700 font-bold mb-2">Description:</label>
+                  <textarea id="Description" [(ngModel)]="card.description" name="Description" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card description"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
+          </form>
+      </div>
+  </div>
 
-    <div class="mt-4 flex flex-col">
-        <div *ngFor="let card of cardMas" class="flex-shrink-0 mr-2 mb-2">
-            <div class="max-w-64 border rounded-md p-4 flex flex-col relative">
-                <div class="flex justify-between items-center">
-                    <p class="text-lg font-semibold">{{ card.name }}</p>
-                    <div class="relative inline-block text-right">
-                        <button type="button" (click)="toggleMenu(card)" class="inline-block rounded border-2 border-info px-2 pb-[2px] text-xs font-medium uppercase leading-normal text-info transition duration-150 ease-in-out hover:border-info-600 hover:bg-info-50/50 hover:text-info-600 focus:border-info-600 focus:bg-info-50/50 focus:text-info-600 focus:outline-none focus:ring-0 active:border-info-700 active:text-info-700 motion-reduce:transition-none dark:hover:bg-cyan-950 dark:focus:bg-cyan-950">
-                            <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <div *ngIf="isMenuOpen[card.cardId]" class="absolute right-0 mt-2 w-18 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            <div class="py-1" role="none">
-                                <button (click)="openEditModal(card.cardId, card.name, card.description, card.priority)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-0">Edit</button>
-                                <button (click)="deleteCardNgOnInit(card)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-1"><p style="color: red;">Delete</p></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-sm text-gray-500 mb-2 whitespace-wrap" style="word-wrap: break-word;">{{ card.description }}</div>
-                <div class="text-xs text-gray-500 mb-2">Created at: {{ formatDateTime(card.createdAt) }}</div>
-                <div class="text-xs text-gray-500 mb-2">Priority: {{ card.priority }}</div>
-            </div>
-        </div>
-    </div>
+  <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showEditModal">
+      <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+      <div class="relative bg-white p-6 rounded-lg w-96">
+          <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeEditModal()">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+          </button>
+          <h2 class="text-2xl font-bold mb-4">Edit Card</h2>
+          <form (ngSubmit)="onSaveClick()">
+              <div class="mb-4">
+                  <label for="editName" class="block text-gray-700 font-bold mb-2">New Card Name:</label>
+                  <input type="text" id="editName" [(ngModel)]="card.name" name="editName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter new list name">
+              </div>
+              <div class="mb-4">
+                  <label for="Priority" class="block text-gray-700 font-bold mb-2">Priority:</label>
+                  <select [(ngModel)]="card.priority" id="Priority" name="Priority" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+                      <option value="" disabled selected hidden class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select priority</option>
+                      <option value="Low">Low</option>
+                      <option value="Medium">Medium</option>
+                      <option value="High">High</option>
+                  </select>
+              </div>
+              <div class="mb-4">
+                  <label for="List" class="block text-gray-700 font-bold mb-2">Select List:</label>
+                  <select [(ngModel)]="selectedListId" id="List" name="List" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+                      <option value="" disabled selected hidden class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">Select list</option>
+                      <option *ngFor="let listItem of listsName" [value]="listItem.id">{{ listItem.name }}</option>
+                  </select>
+              </div>
+              <div class="mb-4">
+                  <label for="Description" class="block text-gray-700 font-bold mb-2">Description:</label>
+                  <textarea id="Description" [(ngModel)]="card.description" name="Description" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter card description"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="mt-4 flex flex-col">
+      <div *ngFor="let card of cardMas" class="flex-shrink-0 mr-2 mb-2">
+          <div class="max-w-64 border rounded-md p-4 flex flex-col relative">
+              <div class="flex justify-between items-center">
+                  <p class="text-lg font-semibold">{{ card.name }}</p>
+                  <div class="relative inline-block text-right">
+                      <button type="button" (click)="toggleMenu(card)" class="inline-block rounded border-2 border-info px-2 pb-[2px] text-xs font-medium uppercase leading-normal text-info transition duration-150 ease-in-out hover:border-info-600 hover:bg-info-50/50 hover:text-info-600 focus:border-info-600 focus:bg-info-50/50 focus:text-info-600 focus:outline-none focus:ring-0 active:border-info-700 active:text-info-700 motion-reduce:transition-none dark:hover:bg-cyan-950 dark:focus:bg-cyan-950">
+                          <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                          </svg>
+                      </button>
+                      <div *ngIf="isMenuOpen[card.cardId]" class="absolute right-0 mt-2 w-18 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <div class="py-1" role="none">
+                              <button (click)="openEditModal(card.cardId, card.name, card.description, card.priority)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-0">Edit</button>
+                              <button (click)="deleteCardNgOnInit(card)" class="text-gray-700 block px-4 py-2 text-sm w-full text-left" role="menuitem" tabindex="-1" id="menu-item-1"><p style="color: red;">Delete</p></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="text-sm text-gray-500 mb-2 whitespace-wrap" style="word-wrap: break-word;">{{ card.description }}</div>
+              <div class="text-xs text-gray-500 mb-2">Created at: {{ formatDateTime(card.createdAt) }}</div>
+              <div class="text-xs text-gray-500 mb-2">Priority: {{ card.priority }}</div>
+          </div>
+      </div>
+  </div>
 </div>
