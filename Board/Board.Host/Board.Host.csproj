@@ -17,5 +17,8 @@
   <ItemGroup>
     <Folder Include="Models\Responces\" />
   </ItemGroup>
-
+	
+  <ItemGroup>
+  <InternalsVisibleTo Include="TestProject1" />
+  </ItemGroup>
 </Project>

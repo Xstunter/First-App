@@ -29,7 +29,7 @@ namespace Board.Host.Controllers
             var result = await _boardService.CreateBoardAsync(request.Name, request.Description);
             return Ok(result);
         }
-        [HttpDelete("/DeleteBoard")]
+        [HttpPost("/DeleteBoard")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
 
         public async Task<IActionResult> DeleteBoard(DeleteBoardRequest request)

@@ -19,7 +19,7 @@ namespace Board.Host.Repositories
             _dbContext = dbContextWrapper.DbContext;
             _logger = logger;
         }
-        public async Task<int> CreateListAsync(string name, int boardId)
+        public async Task<int?> CreateListAsync(string name, int boardId)
         {
             try
             {
