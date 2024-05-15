@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { IBoard } from '../../models/board'
 import { HttpBoardService } from '../../services/board.sevice';
 import { CreateBoardRequest } from '../../models/requests/createboard.request';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from '../lists/list.component';
 import { HistoryComponent } from '../histories/history.component';
