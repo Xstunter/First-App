@@ -74,5 +74,20 @@ namespace Board.Host.Controllers
                 return NotFound();
             }
         }
+        [HttpGet("/GetAllBoard")]
+        [ProducesResponseType(typeof(IEnumerable<BoardDto>), (int)HttpStatusCode.OK)]
+
+        public async Task<IActionResult> GetAllBoard()
+        {
+            var isGet = await _boardService.GetAllBoardAsync();
+            if (isGet != null)
+            {
+                return Ok(isGet);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
