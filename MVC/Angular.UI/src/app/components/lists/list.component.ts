@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { Input } from '@angular/core';
 import { CardComponent } from '../cards/card.component';
 import { ButtonComponent } from '../../../stories/button.component';
+import { Store } from '@ngrx/store';
+import { getlists } from '../ngrx/selectors/list.select';
+import { loadList } from '../ngrx/actions/list.action';
+
 
 @Component({
     selector: 'app-list',
@@ -28,7 +32,7 @@ export class ListComponent {
 
     isMenuOpen: { [key: string]: boolean } = {};
 
-    constructor(private httpService: HttpListService) {}
+    constructor(private httpService: HttpListService, private store: Store) {}
     
     openEditModal(id : number, editName : string) {
         this.list.listId = id;
@@ -83,11 +87,10 @@ export class ListComponent {
     }
 
     getAllListsNgOnInit(){
-        this.httpService.getAllLists(this.boardId).subscribe(result=>{
-            this.listMas = result;
-            console.log(result);
-            this.updateListsName();
-        })
+        this.store.dispatch(loadList({id : this.boardId}));
+        this.store.select(getlists).subscribe(item=>{
+            this.listMas = item;
+        });
     }
 
     createListNgOnInit(){

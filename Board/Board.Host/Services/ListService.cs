@@ -15,7 +15,7 @@ namespace Board.Host.Services
         {
             _listRepository = listRepository;
         }
-        public Task<int> CreateListAsync(string name, int boardId)
+        public Task<int?> CreateListAsync(string name, int boardId)
         {
             return ExecuteSafeAsync(() => _listRepository.CreateListAsync(name, boardId));
         }

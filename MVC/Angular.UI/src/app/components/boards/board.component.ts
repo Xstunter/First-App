@@ -16,16 +16,36 @@ import { HistoryComponent } from '../histories/history.component';
 
 export class BoardComponent {
 
-    board : IBoard = {boardId : 11, name : '', description : ''};
+    board : IBoard = {boardId : 0, name : '', description : ''};
+
+    boardMas : IBoard[] = [];
+  
     showCreateBoardModal = false;
+    showEditBoardModal = false;
+    
+    boardId! : number;
 
     constructor(private httpService: HttpBoardService) {}
+
+    
+    ngOnInit(): void {
+        this.getAllBoardNgOnInit();
+    }
+
+    openEditBoardModal(id : number) {
+        this.showEditBoardModal = true;
+        this.boardId = id;
+    }
+    
+    closeEditBoardModal() {
+        this.showEditBoardModal = false;
+    }
 
     openCreateBoardModal() {
         this.showCreateBoardModal = true;
     }
     
-      closeCreateBoardModal() {
+    closeCreateBoardModal() {
         this.showCreateBoardModal = false;
     }
 
@@ -35,21 +55,40 @@ export class BoardComponent {
             console.log(result);
         })
     }
+    getAllBoardNgOnInit(){
+        this.httpService.getAllBoard().subscribe(result=>{
+            this.boardMas = result;
+            console.log(result);
+        })
+    }
+    updateBoardNgOnInit(){
+        this.httpService.updateBoard(this.boardId, this.board.name).subscribe(result=>{
+            console.log(result);
+            this.getAllBoardNgOnInit(); 
+        })
+        this.closeEditBoardModal();  
+    }
     createBoardNgOnInit(){
         let board : CreateBoardRequest = {Name : this.board.name, Description : this.board.description}
 
         this.httpService.createBoard(board).subscribe(result=>{
-            this.board.boardId=result;
             console.log(result);
+            this.getAllBoardNgOnInit(); 
         })
-        this.closeCreateBoardModal();          
+        this.closeCreateBoardModal();         
     }
-    deleteBoardNgOnInit(){
+    deleteBoardNgOnInit(id : number){
         let isDeleted : Boolean = false;
 
-        this.httpService.deleteBoard(this.board.boardId).subscribe(result=>{
+        this.httpService.deleteBoard(id).subscribe(result=>{
             isDeleted=result;
             console.log(result);
+            this.getAllBoardNgOnInit();
         })          
+    }
+    selectBoardNgOnInit(id : number, name : string){
+        this.board.boardId = id;
+        this.board.name = name;
+        console.log(this.board.boardId);
     }
 }  

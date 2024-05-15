@@ -29,7 +29,7 @@ namespace Board.Host.Controllers
             var result = await _boardService.CreateBoardAsync(request.Name, request.Description);
             return Ok(result);
         }
-        [HttpDelete("/DeleteBoard")]
+        [HttpPost("/DeleteBoard")]
         [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
 
         public async Task<IActionResult> DeleteBoard(DeleteBoardRequest request)
@@ -65,6 +65,21 @@ namespace Board.Host.Controllers
         public async Task<IActionResult> GetBoard(int boardId)
         {
             var isGet = await _boardService.GetBoardAsync(boardId);
+            if (isGet != null)
+            {
+                return Ok(isGet);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        [HttpGet("/GetAllBoard")]
+        [ProducesResponseType(typeof(IEnumerable<BoardDto>), (int)HttpStatusCode.OK)]
+
+        public async Task<IActionResult> GetAllBoard()
+        {
+            var isGet = await _boardService.GetAllBoardAsync();
             if (isGet != null)
             {
                 return Ok(isGet);

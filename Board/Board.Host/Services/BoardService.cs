@@ -28,6 +28,11 @@ namespace Board.Host.Services
             return ExecuteSafeAsync(() => _boardRepository.DeleteBoardAsync(id));
         }
 
+        public Task<IEnumerable<BoardDto>> GetAllBoardAsync()
+        {
+            return ExecuteSafeAsync(() => _boardRepository.GetAllBoardAsync());
+        }
+
         public Task<BoardDto> GetBoardAsync(int id)
         {
             return ExecuteSafeAsync(() => _boardRepository.GetBoardAsync(id));
