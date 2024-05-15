@@ -1,42 +1,43 @@
 <div class="container">
-  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="openCreateListModal()">Create New List</button>
 
+  <storybook-button [primary]="true" [backgroundColor]="'#36a39d'" label="Create new list" (click)="openCreateListModal()"></storybook-button>
+ 
   <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showCreateListModal">
-      <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
-      <div class="relative bg-white p-6 rounded-lg w-96">
-          <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeCreateListModal()">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-          </button>
-          <h2 class="text-2xl font-bold mb-4">Create New List</h2>
-          <form (ngSubmit)="createListNgOnInit()">
-              <div class="mb-4">
-                  <label for="statusName" class="block text-gray-700 font-bold mb-2">List name:</label>
-                  <input type="text" id="statusName" [(ngModel)]="list.statusName" name="statusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter list name">
-              </div>
-              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
-          </form>
-      </div>
+    <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+    <div class="relative bg-white p-6 rounded-lg w-96">
+      <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeCreateListModal()">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold mb-4">Create New List</h2>
+      <form (ngSubmit)="createListNgOnInit()">
+        <div class="mb-4">
+          <label for="statusName" class="block text-gray-700 font-bold mb-2">List name:</label>
+          <input type="text" id="statusName" [(ngModel)]="list.statusName" name="statusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter list name">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
+      </form>
+    </div>
   </div>
 
   <div class="fixed inset-0 flex items-center justify-center z-50" *ngIf="showEditModal">
-      <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
-      <div class="relative bg-white p-6 rounded-lg w-96">
-          <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeEditModal()">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-          </button>
-          <h2 class="text-2xl font-bold mb-4">Edit List</h2>
-          <form (ngSubmit)="updateListNgOnInit(list.listId, list.statusName)">
-              <div class="mb-4">
-                  <label for="editStatusName" class="block text-gray-700 font-bold mb-2">New List Name:</label>
-                  <input type="text" id="editStatusName" [(ngModel)]="list.statusName" name="editStatusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter new list name">
-              </div>
-              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save</button>
-          </form>
-      </div>
+    <div class="fixed inset-0 bg-gray-900 bg-opacity-50"></div>
+    <div class="relative bg-white p-6 rounded-lg w-96">
+      <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" (click)="closeEditModal()">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-2xl font-bold mb-4">Edit List</h2>
+      <form (ngSubmit)="updateListNgOnInit(list.listId, list.statusName)">
+        <div class="mb-4">
+          <label for="editStatusName" class="block text-gray-700 font-bold mb-2">New List Name:</label>
+          <input type="text" id="editStatusName" [(ngModel)]="list.statusName" name="editStatusName" class="w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500" placeholder="Enter new list name">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save</button>
+      </form>
+    </div>
   </div>
 
   <div class="mt-4 flex flex-row overflow-x-auto">

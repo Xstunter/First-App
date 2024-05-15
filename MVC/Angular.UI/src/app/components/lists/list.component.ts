@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Input } from '@angular/core';
 import { CardComponent } from '../cards/card.component';
+import { ButtonComponent } from '../../../stories/button.component';
 
 @Component({
     selector: 'app-list',
     standalone: true,
-    imports: [CommonModule, CardComponent, FormsModule],
+    imports: [CommonModule, CardComponent, FormsModule, ButtonComponent],
     templateUrl: './list.component.html'
 })
 
