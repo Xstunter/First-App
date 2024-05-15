@@ -16,7 +16,6 @@ import { HistoryComponent } from '../histories/history.component';
 
 export class BoardComponent {
 
-
     board : IBoard = {boardId : 0, name : '', description : ''};
 
     boardMas : IBoard[] = [];

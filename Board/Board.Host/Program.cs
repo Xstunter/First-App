@@ -77,3 +77,4 @@ void CreateDbIfNotExists(IHost host)
         }
     }
 }
+public partial class Program { }
