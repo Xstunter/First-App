@@ -18,8 +18,15 @@ export class HttpBoardService {
     getBoard(id : number){
         return this.http.get<IBoard>(this.apiUrl + `/GetBoard?boardId=${id}`)
     }
+    getAllBoard(){
+        return this.http.get<IBoard[]>(this.apiUrl + "/GetAllBoard")
+    }
     deleteBoard(id : number){
         const requestBody = { boardId: id };
         return this.http.request<Boolean>('delete', `${this.apiUrl}/DeleteBoard`, { body: requestBody });
+    }
+    updateBoard(id : number, name : string){
+        const requestBody = { boardId: id, name : name, description : ''};
+        return this.http.request<Boolean>('patch', `${this.apiUrl}/UpdatedBoard`, { body: requestBody });
     }
 }
