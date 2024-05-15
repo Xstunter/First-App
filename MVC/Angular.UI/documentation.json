@@ -1,0 +1,3082 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "IBoard",
+            "id": "interface-IBoard-31337e79b31c2b32483da697ed604a9c6e1b3e3765843dd0a7c504b4b4d02afc8aa201e195919d1957b6641e52a3d98010a128d6df1139666a6d73edd9ac9fab",
+            "file": "src/app/models/board.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IBoard{\r\n    boardId: number,\r\n    name: string,\r\n    description: string\r\n}",
+            "properties": [
+                {
+                    "name": "boardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ICard",
+            "id": "interface-ICard-85424b1a74382fc1e47f09b4428d8ae366c498d757c680833b27ee3de7d8384949f87b35b5063bf58b41aa44a7f2821aa71dd97fe6309fbb236c1c5c8c385e2f",
+            "file": "src/app/models/card.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ICard{\r\n    cardId : number;\r\n    name : string;\r\n    description : string;\r\n    priority : string;\r\n    listId : number;\r\n    createdAt : string;\r\n}",
+            "properties": [
+                {
+                    "name": "cardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "createdAt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "listId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "priority",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "IHistory",
+            "id": "interface-IHistory-8b9c6d7a80438f3e2bc89bde06ea24cb930562e4390087d5febb6c7cf1116d205f875ed53b37ac9f1c990c07e68767965aef52b86486948afeece0f7faddc52f",
+            "file": "src/app/models/history.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IHistory{\r\n    historId : number;\r\n    type : string;\r\n    date : string;\r\n    boardId : number;\r\n}",
+            "properties": [
+                {
+                    "name": "boardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "historId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "IList",
+            "id": "interface-IList-55b4a3fa3c1801c66b115e7a315bd6394d698834de456037c819748dbf992243a08ce26358444feb3c94682d7a3f1189231dea84e1dc80c53f5467b1a44d3351",
+            "file": "src/app/models/list.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IList{\r\n    listId : number,\r\n    statusName : string,\r\n    boardId : number\r\n}",
+            "properties": [
+                {
+                    "name": "boardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "listId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "statusName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "HttpBoardService",
+            "id": "injectable-HttpBoardService-ff3c962dce4a1836fcba2ad88015f2c5e23b2aa3cda0ac8375f08b36c473b426015c79001663f178489c92648af642eb86037fbfd02ca01f79e906edcb7e49ac",
+            "file": "src/app/services/board.sevice.ts",
+            "properties": [
+                {
+                    "name": "apiUrl",
+                    "defaultValue": "\"http://localhost:5000\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methods": [
+                {
+                    "name": "createBoard",
+                    "args": [
+                        {
+                            "name": "board",
+                            "type": "CreateBoardRequest",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "board",
+                            "type": "CreateBoardRequest",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteBoard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getBoard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { IBoard } from \"../models/board\";\r\nimport { CreateBoardRequest } from \"../models/requests/createboard.request\";\r\n\r\n@Injectable({\r\n    providedIn: 'root'\r\n})\r\n\r\nexport class HttpBoardService {\r\n    apiUrl = \"http://localhost:5000\";\r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    createBoard(board : CreateBoardRequest){\r\n        return this.http.post<number>(this.apiUrl + \"/CreateBoard\", board)\r\n    }\r\n    getBoard(id : number){\r\n        return this.http.get<IBoard>(this.apiUrl + `/GetBoard?boardId=${id}`)\r\n    }\r\n    deleteBoard(id : number){\r\n        const requestBody = { boardId: id };\r\n        return this.http.request<Boolean>('delete', `${this.apiUrl}/DeleteBoard`, { body: requestBody });\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "HttpCardService",
+            "id": "injectable-HttpCardService-d5bfd35d9dcac4b69099c7bfa113f8d26994561aa1eea385f878d33cbd29d64ed841dfeb2769a5cf6ef540d7859530a3951284adc015191229bee62c427ae9bc",
+            "file": "src/app/services/card.service.ts",
+            "properties": [
+                {
+                    "name": "apiUrl",
+                    "defaultValue": "\"http://localhost:5000\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methods": [
+                {
+                    "name": "changeListForCard",
+                    "args": [
+                        {
+                            "name": "cardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "listId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "listId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "createCard",
+                    "args": [
+                        {
+                            "name": "card",
+                            "type": "CreateCardRequest",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "card",
+                            "type": "CreateCardRequest",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteCard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCards",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getCard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateCard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "boardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { ICard } from \"../models/card\";\r\nimport { CreateCardRequest } from \"../models/requests/createcard.request\";\r\n\r\n@Injectable({\r\n    providedIn: 'root'\r\n})\r\n\r\nexport class HttpCardService {\r\n    apiUrl = \"http://localhost:5000\";\r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    createCard(card : CreateCardRequest){\r\n        return this.http.post<number>(this.apiUrl + \"/CreateCard\", card)\r\n    }\r\n    getCard(id : number){\r\n        return this.http.get<ICard>(this.apiUrl + `/GetCard?cardId=${id}`)\r\n    }\r\n    getAllCards(id : number){\r\n        return this.http.get<ICard[]>(this.apiUrl + `/GetAllListsCard?listId=${id}`)\r\n    }\r\n    deleteCard(id : number, boardId : number){\r\n        const requestBody = { cardId: id, boardId : boardId };\r\n        return this.http.request<Boolean>('delete', `${this.apiUrl}/DeleteCard`, { body: requestBody });\r\n    }\r\n    updateCard(id : number, cardName : string, cardDescription : string, cardPriority : string, boardId : number){\r\n        const requestBody = { cardId: id, name : cardName, description : cardDescription, priority : cardPriority, boardId : boardId};\r\n        return this.http.request<Boolean>('patch', `${this.apiUrl}/UpdatedCard`, { body: requestBody });\r\n    }\r\n    changeListForCard(cardId : number, listId : number, boardId : number){\r\n        const requestBody = { cardId: cardId, listId : listId, boardId : boardId};\r\n        return this.http.request<Boolean>('patch', `${this.apiUrl}/ChangeListForCard`, { body: requestBody });\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "HttpHistoryService",
+            "id": "injectable-HttpHistoryService-1d3a37dd65b61d0d9ab1849e5055e1ce012e33435a056a231561b15fa3b188ffac8982f076cb0f4fabc9ba8513a703f6d202240c67a2f23197bf6da8ade5949e",
+            "file": "src/app/services/history.service.ts",
+            "properties": [
+                {
+                    "name": "apiUrl",
+                    "defaultValue": "\"http://localhost:5000\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getBoardHistory",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getHistoryCard",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { IHistory } from \"../models/history\";\r\n\r\n@Injectable({\r\n    providedIn: 'root'\r\n})\r\n\r\nexport class HttpHistoryService {\r\n    apiUrl = \"http://localhost:5000\";\r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    getHistoryCard(id : number){\r\n        return this.http.get<IHistory>(this.apiUrl + `/GetHistoryCard?historyId=${id}`)\r\n    }\r\n    getBoardHistory(id : number){\r\n        return this.http.get<IHistory[]>(this.apiUrl + `/GetBoardHistory?boardId=${id}`)\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "HttpListService",
+            "id": "injectable-HttpListService-c8a2869f040e5663f593b2b5ec110adefc3effffc4bb6c1721a7d205786ec77d0efe7805bae65f2a043bfd959e2b6ec2dfe6dd2d0cd03d4608eda382a756a32c",
+            "file": "src/app/services/list.service.ts",
+            "properties": [
+                {
+                    "name": "apiUrl",
+                    "defaultValue": "\"http://localhost:5000\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methods": [
+                {
+                    "name": "createList",
+                    "args": [
+                        {
+                            "name": "list",
+                            "type": "CreateListRequest",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "list",
+                            "type": "CreateListRequest",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteList",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllLists",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getList",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateList",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from \"@angular/common/http\";\r\nimport { Injectable } from \"@angular/core\";\r\nimport { IList } from \"../models/list\";\r\nimport { ICard } from \"../models/card\";\r\nimport { CreateListRequest } from \"../models/requests/createlist.request\";\r\n\r\n@Injectable({\r\n    providedIn: 'root'\r\n})\r\n\r\nexport class HttpListService {\r\n    apiUrl = \"http://localhost:5000\";\r\n\r\n    constructor(private http: HttpClient) {}\r\n\r\n    createList(list : CreateListRequest){\r\n        return this.http.post<number>(this.apiUrl + \"/CreateList\", list)\r\n    }\r\n    getList(id : number){\r\n        return this.http.get<IList>(this.apiUrl + `/GetList?listId=${id}`)\r\n    }\r\n    getAllLists(id : number){\r\n        return this.http.get<IList[]>(this.apiUrl + `/GetAllLists?boardId=${id}`)\r\n    }\r\n    deleteList(id : number){\r\n        const requestBody = { listId: id };\r\n        return this.http.request<Boolean>('delete', `${this.apiUrl}/DeleteList`, { body: requestBody });\r\n    }\r\n    updateList(id : number, name : string){\r\n        const requestBody = { listId: id, statusName: name};\r\n        return this.http.request<Boolean>('patch', `${this.apiUrl}/UpdatedList`, { body: requestBody });\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [
+        {
+            "name": "CreateBoardRequest",
+            "id": "class-CreateBoardRequest-edbf0b2ca53ffc8c9110661f9392feb914c2ecde3f0c7f42d53dd3839a3a468374e414733354767c50d0cb5b910dfe2b91bd568f966038ee8a29adc40db25de6",
+            "file": "src/app/models/requests/createboard.request.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class CreateBoardRequest{\r\n    Name! : string;\r\n    Description! : string;\r\n}",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [
+                {
+                    "name": "Description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "Name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "CreateCardRequest",
+            "id": "class-CreateCardRequest-8765a5c29a0fa1ba7d25d384417551d7fda5b22317dc05a8d194a192c06ce0d012e069d5efd6c8b09e979e08b97f90d41deadb76b8c2ccd04cb9e9949a9d0bbd",
+            "file": "src/app/models/requests/createcard.request.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class CreateCardRequest{\r\n    Name! : string;\r\n    Description! : string;\r\n    Priority! : string;\r\n    ListId! : number;\r\n    BoardId! : number;\r\n}",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [
+                {
+                    "name": "BoardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "Description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "ListId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "Name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "Priority",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "CreateListRequest",
+            "id": "class-CreateListRequest-cf5466a58bf98838ba6edc481ca08146238531b20337bda4b240a845b758277407370908e42a44d2e528c23f789224e16da53e2fc2a09ff8a443613ae3c74761",
+            "file": "src/app/models/requests/createlist.request.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class CreateListRequest{\r\n    StatusName! : string;\r\n    BoardId! : number;\r\n}",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [
+                {
+                    "name": "BoardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "StatusName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-d29c775109b6edee25bc44b959501939d4b4eabe1864fa5f97e0172be91398e6e77f77c905e037f1c543dce62c152d8e19a3546f639d7c71053ae97fa13e7e54",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Angular.UI'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "BoardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { BoardComponent } from './components/boards/board.component';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, BoardComponent],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.css'\r\n})\r\nexport class AppComponent {\r\n  title = 'Angular.UI';\r\n}\r\n",
+            "styleUrl": "./app.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"min-h-full\">\r\n    <nav class=\"bg-gray-800\">\r\n      <div class=\"max-w-7xl px-4 sm:px-6 lg:px-8\">\r\n        <div class=\"flex h-16 items-center justify-between\">\r\n          <div class=\"flex items-center\">\r\n            <div class=\"flex-shrink-0\">\r\n              <img class=\"h-8 w-8\" src=\"https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500\" alt=\"Your Company\">\r\n            </div>\r\n            <div class=\"hidden md:block\">\r\n              <div class=\"ml-10 flex items-baseline space-x-4\">\r\n                <p class=\"bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium\" aria-current=\"page\">Dashboard</p>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n</div>\r\n<app-board>\r\n  \r\n</app-board>\r\n\r\n<router-outlet />\r\n"
+        },
+        {
+            "name": "BoardComponent",
+            "id": "component-BoardComponent-50c8cc069eaa4dba4c0bbcf8c417a8ebd6c60793363d2a140f4b368722d8fbe901f9e8c76ec7ded669059f82aafdbff67e7b6161201552ac8da972a215eef39f",
+            "file": "src/app/components/boards/board.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-board",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./board.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "board",
+                    "defaultValue": "{boardId : 0, name : '', description : ''}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IBoard",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "showCreateBoardModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeCreateBoardModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "createBoardNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteBoardNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getBoardNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openCreateBoardModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ListComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HistoryComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core'\r\nimport { IBoard } from '../../models/board'\r\nimport { HttpBoardService } from '../../services/board.sevice';\r\nimport { CreateBoardRequest } from '../../models/requests/createboard.request';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { ListComponent } from '../lists/list.component';\r\nimport { HistoryComponent } from '../histories/history.component';\r\n\r\n@Component({\r\n    selector: 'app-board',\r\n    standalone: true,\r\n    imports: [CommonModule, FormsModule, ListComponent, HistoryComponent],\r\n    templateUrl: './board.component.html'\r\n})\r\n\r\nexport class BoardComponent {\r\n\r\n    board : IBoard = {boardId : 0, name : '', description : ''};\r\n    showCreateBoardModal = false;\r\n\r\n    constructor(private httpService: HttpBoardService) {}\r\n\r\n    openCreateBoardModal() {\r\n        this.showCreateBoardModal = true;\r\n    }\r\n    \r\n      closeCreateBoardModal() {\r\n        this.showCreateBoardModal = false;\r\n    }\r\n\r\n    getBoardNgOnInit(){\r\n        this.httpService.getBoard(this.board.boardId).subscribe(result=>{\r\n            this.board = result;\r\n            console.log(result);\r\n        })\r\n    }\r\n    createBoardNgOnInit(){\r\n        let board : CreateBoardRequest = {Name : this.board.name, Description : this.board.description}\r\n\r\n        this.httpService.createBoard(board).subscribe(result=>{\r\n            this.board.boardId=result;\r\n            console.log(result);\r\n        })\r\n        this.closeCreateBoardModal();          \r\n    }\r\n    deleteBoardNgOnInit(){\r\n        let isDeleted : Boolean = false;\r\n\r\n        this.httpService.deleteBoard(this.board.boardId).subscribe(result=>{\r\n            isDeleted=result;\r\n            console.log(result);\r\n        })          \r\n    }\r\n}  ",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpBoardService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpBoardService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "\r\n<div class=\"container\">\r\n\r\n  <ng-container *ngIf=\"!board.boardId; else existingBoard\">\r\n    <div class=\"text-center mt-4\">\r\n      <h1 class=\"text-3xl font-bold mb-4\">Create your Board</h1>\r\n      <button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\" (click)=\"openCreateBoardModal()\">Create board</button>\r\n    </div>\r\n  </ng-container>\r\n\r\n  <ng-template #existingBoard>\r\n    <div class=\"flex justify-between items-center mb-4\">\r\n      <h1 class=\"text-3xl font-bold\">{{ board.name }}</h1>\r\n      <app-history [boardId]=\"board.boardId\"></app-history>\r\n    </div>\r\n    <app-list [boardId]=\"board.boardId\"></app-list>\r\n  </ng-template>\r\n\r\n  <div class=\"fixed inset-0 flex items-center justify-center z-50\" *ngIf=\"showCreateBoardModal\">\r\n    <div class=\"fixed inset-0 bg-gray-900 bg-opacity-50\"></div>\r\n    <div class=\"relative bg-white p-6 rounded-lg w-96\">\r\n      <button class=\"absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800\" (click)=\"closeCreateBoardModal()\">\r\n        <svg class=\"w-6 h-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n        </svg>\r\n      </button>\r\n      <h2 class=\"text-2xl font-bold mb-4\">Create new board</h2>\r\n      <form (ngSubmit)=\"createBoardNgOnInit()\">\r\n        <div class=\"mb-4\">\r\n          <label for=\"boardName\" class=\"block text-gray-700 font-bold mb-2\">Name:</label>\r\n          <input type=\"text\" id=\"boardName\" [(ngModel)]=\"board.name\" name=\"boardName\"\r\n            class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\"\r\n            placeholder=\"Enter name\">\r\n        </div>\r\n        <div class=\"mb-6\">\r\n          <label for=\"boardDescription\" class=\"block text-gray-700 font-bold mb-2\">Description:</label>\r\n          <textarea id=\"boardDescription\" [(ngModel)]=\"board.description\" name=\"boardDescription\"\r\n            class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\"\r\n            placeholder=\"Enter description\"></textarea>\r\n        </div>\r\n        <button type=\"submit\"\r\n          class=\"w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\">Create</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n\r\n</div>"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-86e2311c54fbca7431c12e070d0fd5b0ebe343eec0553a392f182ba0e04a8f86613233d26ee47718fd0e7a65078f580c76a1fcc928ce55de81193d6618025bc4",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 798,
+                            "end": 811,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 334,
+                            "tagName": {
+                                "pos": 799,
+                                "end": 807,
+                                "flags": 16842752,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 80,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 43,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 35,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 49,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 51
+                    }
+                }
+            }
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-0d5bd17288fd134077cbb47c9f14a4ae9e0cb23b0a3acfc2ad001cb583c2dff01bce61f7e1468e990689072480f00297e84ea00fc994c30f37828c5770ad8e4d",
+            "file": "src/app/components/cards/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "boardId",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "listId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "listsName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "card",
+                    "defaultValue": "{cardId : 0, name : '', description : '', priority : '',  listId : 0, createdAt : ''}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ICard",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "cardCountPerList",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "cardMas",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ICard[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "isMenuOpen",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "selectedListId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "showCreateCardModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "showEditModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeListForCardNgOnInit",
+                    "args": [
+                        {
+                            "name": "cardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "listId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 104,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "cardId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "listId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "closeCreateCardModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeEditModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "countCardsPerList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 124,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "createCardNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteCardNgOnInit",
+                    "args": [
+                        {
+                            "name": "card",
+                            "type": "ICard",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 85,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "card",
+                            "type": "ICard",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "formatDateTime",
+                    "args": [
+                        {
+                            "name": "dateTimeString",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 113,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "dateTimeString",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCardsNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 65,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSaveClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openCreateCardModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openEditModal",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "editDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "editPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "editDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "editPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleMenu",
+                    "args": [
+                        {
+                            "name": "card",
+                            "type": "ICard",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "card",
+                            "type": "ICard",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateCardNgOnInit",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "cardPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 94,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardDescription",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "cardPriority",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core'\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { Input } from '@angular/core';\r\nimport { ICard } from '../../models/card';\r\nimport { HttpCardService } from '../../services/card.service';\r\nimport { CreateCardRequest } from '../../models/requests/createcard.request';\r\nimport { ListComponent } from '../lists/list.component';\r\n\r\n@Component({\r\n    selector: 'app-card',\r\n    standalone: true,\r\n    imports: [CommonModule, FormsModule],\r\n    templateUrl: './card.component.html'\r\n})\r\n\r\nexport class CardComponent{\r\n    @Input() listId!: number;\r\n    @Input() listsName! : {name : string, id : number}[];\r\n    @Input() boardId : number = 0;\r\n\r\n    showCreateCardModal = false;\r\n    showEditModal = false;\r\n\r\n    selectedListId!: number;\r\n\r\n    card : ICard = {cardId : 0, name : '', description : '', priority : '',  listId : 0, createdAt : ''};\r\n    cardMas : ICard[] = [];\r\n\r\n    isMenuOpen: { [key: string]: boolean } = {};\r\n    cardCountPerList: { [key: number]: number } = {};\r\n\r\n    constructor(private httpService: HttpCardService, private listComponent : ListComponent) {} // Bad listComponent inject, this only for getAllListsNgOnInit for method changeListForCardNgOnInit\r\n    \r\n    onSaveClick() {\r\n        this.updateCardNgOnInit(this.card.cardId, this.card.name, this.card.description, this.card.priority);\r\n        this.changeListForCardNgOnInit(this.card.cardId, this.selectedListId);\r\n    }\r\n\r\n    openEditModal(id : number, editName : string, editDescription : string, editPriority : string) {\r\n        this.card.cardId = id;\r\n        this.card.name = editName;\r\n        this.card.description = editDescription;\r\n        this.card.priority = editPriority;\r\n        this.showEditModal = true;\r\n    }\r\n    closeEditModal() {\r\n        this.showEditModal = false;\r\n    }\r\n\r\n    openCreateCardModal() {\r\n        this.showCreateCardModal = true;\r\n    }\r\n    closeCreateCardModal() {\r\n        this.showCreateCardModal = false;\r\n    }\r\n\r\n    toggleMenu(card: ICard) {\r\n        if (this.isMenuOpen[card.cardId]) {\r\n            this.isMenuOpen[card.cardId] = false;\r\n        } else {\r\n            this.isMenuOpen[card.cardId] = true;\r\n        }\r\n    }\r\n    ngOnInit() {\r\n        this.getAllCardsNgOnInit();\r\n    }\r\n    getAllCardsNgOnInit(){\r\n        this.httpService.getAllCards(this.listId).subscribe(result=>{\r\n            this.cardMas = result;\r\n            console.log(result);\r\n            this.countCardsPerList();\r\n        })\r\n    }\r\n    createCardNgOnInit(){\r\n        let card : CreateCardRequest = { Name : this.card.name, Description : this.card.description, Priority : this.card.priority, ListId : this.listId, BoardId : this.boardId}\r\n\r\n        this.httpService.createCard(card).subscribe(result=>{\r\n            this.card.cardId = result;\r\n            console.log(result);\r\n            this.getAllCardsNgOnInit();\r\n        })\r\n        this.closeCreateCardModal();          \r\n    }\r\n    deleteCardNgOnInit(card : ICard){\r\n        let isDeleted : Boolean = false;\r\n\r\n        this.httpService.deleteCard(card.cardId, this.boardId).subscribe(result=>{\r\n            isDeleted=result;\r\n            console.log(result);\r\n            this.getAllCardsNgOnInit();\r\n        })          \r\n    }\r\n    updateCardNgOnInit(id : number, cardName : string, cardDescription : string, cardPriority : string){\r\n        let isUpdated : Boolean = false;\r\n\r\n        this.httpService.updateCard(id, cardName, cardDescription, cardPriority, this.boardId).subscribe(result=>{\r\n            isUpdated=result;\r\n            console.log(result);\r\n            this.getAllCardsNgOnInit();\r\n        })         \r\n        this.closeEditModal();\r\n    }\r\n    changeListForCardNgOnInit(cardId : number, listId : number){\r\n        let isChanged : Boolean = false;\r\n\r\n        this.httpService.changeListForCard(cardId, listId, this.boardId).subscribe(result=>{\r\n            isChanged=result;\r\n            console.log(result);\r\n            this.listComponent.getAllListsNgOnInit();\r\n        })         \r\n    }\r\n    formatDateTime(dateTimeString: string): string {\r\n        const options: Intl.DateTimeFormatOptions = {\r\n          year: 'numeric',\r\n          month: 'long',\r\n          day: 'numeric',\r\n          weekday: 'long' as 'long' \r\n        };\r\n        const dateTime = new Date(dateTimeString);\r\n        return dateTime.toLocaleDateString('en-US', options);\r\n    }\r\n\r\n    countCardsPerList() {\r\n        this.cardCountPerList = {};\r\n        this.listsName.forEach(list => {\r\n          this.httpService.getAllCards(list.id).subscribe(cards => {\r\n            this.cardCountPerList[list.id] = cards.length;\r\n          });\r\n        });\r\n    }\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpCardService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "listComponent",
+                        "type": "ListComponent",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 31,
+                "jsdoctags": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpCardService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "listComponent",
+                        "type": "ListComponent",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"container\">\r\n      <div>({{ cardCountPerList[listId] || 0 }})</div>\r\n      \r\n      <div class=\"container\">\r\n        <div class=\"flex justify-center\">\r\n          <button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\" (click)=\"openCreateCardModal()\">Create new card</button>\r\n        </div>\r\n      </div>\r\n\r\n    <div class=\"fixed inset-0 flex items-center justify-center z-50\" *ngIf=\"showCreateCardModal\">\r\n        <div class=\"fixed inset-0 bg-gray-900 bg-opacity-50\"></div>\r\n        <div class=\"relative bg-white p-6 rounded-lg w-96\">\r\n            <button class=\"absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800\" (click)=\"closeCreateCardModal()\">\r\n                <svg class=\"w-6 h-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n                    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n                </svg>\r\n            </button>\r\n            <h2 class=\"text-2xl font-bold mb-4\">Create new card</h2>\r\n            <form (ngSubmit)=\"createCardNgOnInit()\" class=\"bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4\">\r\n                <div class=\"mb-4\">\r\n                    <label for=\"Name\" class=\"block text-gray-700 font-bold mb-2\">Name:</label>\r\n                    <input type=\"text\" id=\"Name\" [(ngModel)]=\"card.name\" name=\"Name\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter card name\">\r\n                </div>\r\n                <div class=\"mb-4\">\r\n                    <label for=\"Priority\" class=\"block text-gray-700 font-bold mb-2\">Priority:</label>\r\n                    <select [(ngModel)]=\"card.priority\" id=\"Priority\" name=\"Priority\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">\r\n                        <option value=\"\" disabled selected hidden  class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">Select priority</option>\r\n                        <option value=\"Low\">Low</option>\r\n                        <option value=\"Medium\">Medium</option>\r\n                        <option value=\"High\">High</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"mb-4\">\r\n                    <label for=\"Description\" class=\"block text-gray-700 font-bold mb-2\">Description:</label>\r\n                    <textarea id=\"Description\" [(ngModel)]=\"card.description\" name=\"Description\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter card description\"></textarea>\r\n                </div>\r\n                <button type=\"submit\" class=\"w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\">Create</button>\r\n            </form>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"fixed inset-0 flex items-center justify-center z-50\" *ngIf=\"showEditModal\">\r\n        <div class=\"fixed inset-0 bg-gray-900 bg-opacity-50\"></div>\r\n        <div class=\"relative bg-white p-6 rounded-lg w-96\">\r\n            <button class=\"absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800\" (click)=\"closeEditModal()\">\r\n                <svg class=\"w-6 h-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n                    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n                </svg>\r\n            </button>\r\n            <h2 class=\"text-2xl font-bold mb-4\">Edit Card</h2>\r\n            <form (ngSubmit)=\"onSaveClick()\">\r\n                <div class=\"mb-4\">\r\n                    <label for=\"editName\" class=\"block text-gray-700 font-bold mb-2\">New Card Name:</label>\r\n                    <input type=\"text\" id=\"editName\" [(ngModel)]=\"card.name\" name=\"editName\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter new list name\">\r\n                </div>\r\n                <div class=\"mb-4\">\r\n                    <label for=\"Priority\" class=\"block text-gray-700 font-bold mb-2\">Priority:</label>\r\n                    <select [(ngModel)]=\"card.priority\" id=\"Priority\" name=\"Priority\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">\r\n                        <option value=\"\" disabled selected hidden class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">Select priority</option>\r\n                        <option value=\"Low\">Low</option>\r\n                        <option value=\"Medium\">Medium</option>\r\n                        <option value=\"High\">High</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"mb-4\">\r\n                    <label for=\"List\" class=\"block text-gray-700 font-bold mb-2\">Select List:</label>\r\n                    <select [(ngModel)]=\"selectedListId\" id=\"List\" name=\"List\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">\r\n                        <option value=\"\" disabled selected hidden class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\">Select list</option>\r\n                        <option *ngFor=\"let listItem of listsName\" [value]=\"listItem.id\">{{ listItem.name }}</option>\r\n                    </select>\r\n                </div>\r\n                <div class=\"mb-4\">\r\n                    <label for=\"Description\" class=\"block text-gray-700 font-bold mb-2\">Description:</label>\r\n                    <textarea id=\"Description\" [(ngModel)]=\"card.description\" name=\"Description\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter card description\"></textarea>\r\n                </div>\r\n                <button type=\"submit\" class=\"w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\">Save</button>\r\n            </form>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"mt-4 flex flex-col\">\r\n        <div *ngFor=\"let card of cardMas\" class=\"flex-shrink-0 mr-2 mb-2\">\r\n            <div class=\"max-w-64 border rounded-md p-4 flex flex-col relative\">\r\n                <div class=\"flex justify-between items-center\">\r\n                    <p class=\"text-lg font-semibold\">{{ card.name }}</p>\r\n                    <div class=\"relative inline-block text-right\">\r\n                        <button type=\"button\" (click)=\"toggleMenu(card)\" class=\"inline-block rounded border-2 border-info px-2 pb-[2px] text-xs font-medium uppercase leading-normal text-info transition duration-150 ease-in-out hover:border-info-600 hover:bg-info-50/50 hover:text-info-600 focus:border-info-600 focus:bg-info-50/50 focus:text-info-600 focus:outline-none focus:ring-0 active:border-info-700 active:text-info-700 motion-reduce:transition-none dark:hover:bg-cyan-950 dark:focus:bg-cyan-950\">\r\n                            <svg class=\"-mr-1 h-5 w-5 text-gray-400\" viewBox=\"0 0 20 20\" fill=\"currentColor\" aria-hidden=\"true\">\r\n                                <path fill-rule=\"evenodd\" d=\"M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z\" clip-rule=\"evenodd\" />\r\n                            </svg>\r\n                        </button>\r\n                        <div *ngIf=\"isMenuOpen[card.cardId]\" class=\"absolute right-0 mt-2 w-18 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none\">\r\n                            <div class=\"py-1\" role=\"none\">\r\n                                <button (click)=\"openEditModal(card.cardId, card.name, card.description, card.priority)\" class=\"text-gray-700 block px-4 py-2 text-sm w-full text-left\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-0\">Edit</button>\r\n                                <button (click)=\"deleteCardNgOnInit(card)\" class=\"text-gray-700 block px-4 py-2 text-sm w-full text-left\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-1\"><p style=\"color: red;\">Delete</p></button>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"text-sm text-gray-500 mb-2 whitespace-wrap\" style=\"word-wrap: break-word;\">{{ card.description }}</div>\r\n                <div class=\"text-xs text-gray-500 mb-2\">Created at: {{ formatDateTime(card.createdAt) }}</div>\r\n                <div class=\"text-xs text-gray-500 mb-2\">Priority: {{ card.priority }}</div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-cad94b233ec8e80ceb541e7972c5f9737e08237b4e137112f3987ca48ee0cce5c0d57798d41daa5d4d24d6bdbb2df1606ab68cca2aa0a1785e38f99f3cac0729",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 78,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            [primary]=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HistoryComponent",
+            "id": "component-HistoryComponent-6e6984bb0971b58c87a219053f90fefbf2da9195fc09b0cb67e4947fa7e2b4593cb87dc43b413abd78250fed520fb3a408dcebd12aba46bdcedf87947ed8d0be",
+            "file": "src/app/components/histories/history.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-history",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./history.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "boardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "historyMas",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IHistory[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "historyVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getAllBoardHistoryNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleHistory",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core'\r\nimport { CommonModule } from '@angular/common'\r\nimport { FormsModule } from '@angular/forms'\r\nimport { HttpHistoryService } from '../../services/history.service'\r\nimport { Input } from '@angular/core'\r\nimport { IHistory } from '../../models/history'\r\n\r\n@Component({\r\n    selector : \"app-history\",\r\n    standalone : true,\r\n    imports : [CommonModule, FormsModule],\r\n    templateUrl : './history.component.html'\r\n})\r\n\r\nexport class HistoryComponent{\r\n    @Input() boardId! : number;\r\n\r\n    historyMas : IHistory[] = [];\r\n    historyVisible = false;\r\n\r\n    constructor(private httpService: HttpHistoryService) {}\r\n\r\n    ngOnInit() {\r\n        this.getAllBoardHistoryNgOnInit();\r\n    }\r\n\r\n    getAllBoardHistoryNgOnInit(){\r\n        this.httpService.getBoardHistory(this.boardId).subscribe(result=>{\r\n            this.historyMas = result;\r\n            console.log(result);\r\n        })\r\n    }\r\n    \r\n    toggleHistory() {\r\n        this.historyVisible = !this.historyVisible;\r\n        if (this.historyVisible) {\r\n          this.getAllBoardHistoryNgOnInit();\r\n        } else {\r\n          this.historyMas = []; // Очистка истории при скрытии панели\r\n        }\r\n      }\r\n\r\n}",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpHistoryService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpHistoryService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "\r\n<div class=\"mt-2\">\r\n  <button *ngIf=\"!historyVisible\" class=\"bg-blue-500 text-white px-4 py-2 rounded\" (click)=\"toggleHistory()\">\r\n    Show History\r\n  </button>\r\n</div>\r\n\r\n<div *ngIf=\"historyVisible\" class=\"fixed inset-y-0 right-0 flex flex-col bg-white border-l border-gray-200 shadow-lg w-64\" style=\"z-index: 998\">\r\n  <button class=\"bg-blue-500 text-white px-4 py-2 rounded-t\" (click)=\"toggleHistory()\">\r\n    Hide History\r\n  </button>\r\n  <ul class=\"history-list overflow-y-auto\">\r\n    <li *ngFor=\"let history of historyMas.slice(0, 20)\" class=\"border-b border-gray-200 py-2 px-4\">\r\n      <p>{{ history.type }}</p>\r\n      <p>{{ history.date | date:'medium' }}</p>\r\n    </li>\r\n  </ul>\r\n  <p *ngIf=\"historyMas.length === 0\" class=\"px-4 py-2\">No history available</p>\r\n</div>"
+        },
+        {
+            "name": "ListComponent",
+            "id": "component-ListComponent-a13aa6836f999598dea589cd54d902437aa4172e841d48ee42384b8cd6f4d34960f3142b520bb9b9206c3c8cdb263fc3074edf9625845d9fd1085dd563055d6d",
+            "file": "src/app/components/lists/list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-list",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./list.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "boardId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isMenuOpen",
+                    "defaultValue": "{}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "list",
+                    "defaultValue": "{listId : 0, statusName : '', boardId : 0}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IList",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "listMas",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IList[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "listsName",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "showCreateListModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "showEditModal",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "closeCreateListModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeEditModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "createListNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteListNgOnInit",
+                    "args": [
+                        {
+                            "name": "list",
+                            "type": "IList",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "list",
+                            "type": "IList",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllListsNgOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngDoCheck",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 60,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openCreateListModal",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openEditModal",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "saveList",
+                    "args": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleMenu",
+                    "args": [
+                        {
+                            "name": "list",
+                            "type": "IList",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "list",
+                            "type": "IList",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateListNgOnInit",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 111,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "editName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateListsName",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 77,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core'\r\nimport { IList } from '../../models/list';\r\nimport { HttpListService } from '../../services/list.service';\r\nimport { CreateListRequest } from '../../models/requests/createlist.request';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { Input } from '@angular/core';\r\nimport { CardComponent } from '../cards/card.component';\r\n\r\n@Component({\r\n    selector: 'app-list',\r\n    standalone: true,\r\n    imports: [CommonModule, CardComponent, FormsModule],\r\n    templateUrl: './list.component.html'\r\n})\r\n\r\nexport class ListComponent {\r\n\r\n    @Input() boardId!: number;\r\n\r\n    list : IList = {listId : 0, statusName : '', boardId : 0}; //For change one list\r\n    listMas : IList[] = []; //For GetAllList\r\n    listsName : {name : string, id : number}[] = []; // For Change list for card\r\n\r\n    showCreateListModal = false;\r\n    showEditModal = false;\r\n\r\n    isMenuOpen: { [key: string]: boolean } = {};\r\n\r\n    constructor(private httpService: HttpListService) {}\r\n    \r\n    openEditModal(id : number, editName : string) {\r\n        this.list.listId = id;\r\n        this.list.statusName = editName;\r\n        this.showEditModal = true;\r\n    }\r\n    closeEditModal() {\r\n        this.showEditModal = false;\r\n    }\r\n\r\n    openCreateListModal() {\r\n        this.showCreateListModal = true;\r\n    }\r\n    closeCreateListModal() {\r\n        this.showCreateListModal = false;\r\n    }\r\n    \r\n    toggleMenu(list: IList) {\r\n        if (this.isMenuOpen[list.listId]) {\r\n            this.isMenuOpen[list.listId] = false;\r\n        } else {\r\n            this.isMenuOpen[list.listId] = true;\r\n        }\r\n    }\r\n    \r\n    ngOnInit() {\r\n        this.getAllListsNgOnInit();    \r\n    }\r\n\r\n    ngDoCheck() {\r\n            this.listMas.forEach(list => {\r\n            this.saveList(list.statusName, list.listId);\r\n            });\r\n    }\r\n\r\n    saveList(name: string, id: number) {\r\n\r\n            const existingList = this.listsName.find(list => list.name === name);\r\n\r\n            if (existingList) {\r\n            existingList.id = id;\r\n            } else {\r\n            this.listsName.push({ name, id });\r\n            }\r\n    }\r\n\r\n    updateListsName() {\r\n        this.listsName = [];\r\n        this.listMas.forEach(list => {\r\n          this.saveList(list.statusName, list.listId);\r\n        });\r\n    }\r\n\r\n    getAllListsNgOnInit(){\r\n        this.httpService.getAllLists(this.boardId).subscribe(result=>{\r\n            this.listMas = result;\r\n            console.log(result);\r\n            this.updateListsName();\r\n        })\r\n    }\r\n\r\n    createListNgOnInit(){\r\n        let list : CreateListRequest = {StatusName : this.list.statusName, BoardId : this.boardId}\r\n\r\n        this.httpService.createList(list).subscribe(result=>{\r\n            this.list.listId = result;\r\n            console.log(result);\r\n            this.getAllListsNgOnInit();\r\n        })\r\n        this.closeCreateListModal();          \r\n    }\r\n    deleteListNgOnInit(list : IList){\r\n        let isDeleted : Boolean = false;\r\n\r\n        this.httpService.deleteList(list.listId).subscribe(result=>{\r\n            isDeleted=result;\r\n            console.log(result);\r\n            this.getAllListsNgOnInit();\r\n        })          \r\n    }\r\n    updateListNgOnInit(id : number, editName : string){\r\n        let isUpdated : Boolean = false;\r\n\r\n        this.httpService.updateList(id, editName).subscribe(result=>{\r\n            isUpdated=result;\r\n            console.log(result);\r\n            this.getAllListsNgOnInit();\r\n        })\r\n        this.closeEditModal();            \r\n    }\r\n}  ",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpListService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 28,
+                "jsdoctags": [
+                    {
+                        "name": "httpService",
+                        "type": "HttpListService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<div class=\"container\">\r\n  <button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\" (click)=\"openCreateListModal()\">Create New List</button>\r\n\r\n  <div class=\"fixed inset-0 flex items-center justify-center z-50\" *ngIf=\"showCreateListModal\">\r\n      <div class=\"fixed inset-0 bg-gray-900 bg-opacity-50\"></div>\r\n      <div class=\"relative bg-white p-6 rounded-lg w-96\">\r\n          <button class=\"absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800\" (click)=\"closeCreateListModal()\">\r\n              <svg class=\"w-6 h-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n              </svg>\r\n          </button>\r\n          <h2 class=\"text-2xl font-bold mb-4\">Create New List</h2>\r\n          <form (ngSubmit)=\"createListNgOnInit()\">\r\n              <div class=\"mb-4\">\r\n                  <label for=\"statusName\" class=\"block text-gray-700 font-bold mb-2\">List name:</label>\r\n                  <input type=\"text\" id=\"statusName\" [(ngModel)]=\"list.statusName\" name=\"statusName\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter list name\">\r\n              </div>\r\n              <button type=\"submit\" class=\"w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\">Create</button>\r\n          </form>\r\n      </div>\r\n  </div>\r\n\r\n  <div class=\"fixed inset-0 flex items-center justify-center z-50\" *ngIf=\"showEditModal\">\r\n      <div class=\"fixed inset-0 bg-gray-900 bg-opacity-50\"></div>\r\n      <div class=\"relative bg-white p-6 rounded-lg w-96\">\r\n          <button class=\"absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800\" (click)=\"closeEditModal()\">\r\n              <svg class=\"w-6 h-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n                  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M6 18L18 6M6 6l12 12\"></path>\r\n              </svg>\r\n          </button>\r\n          <h2 class=\"text-2xl font-bold mb-4\">Edit List</h2>\r\n          <form (ngSubmit)=\"updateListNgOnInit(list.listId, list.statusName)\">\r\n              <div class=\"mb-4\">\r\n                  <label for=\"editStatusName\" class=\"block text-gray-700 font-bold mb-2\">New List Name:</label>\r\n                  <input type=\"text\" id=\"editStatusName\" [(ngModel)]=\"list.statusName\" name=\"editStatusName\" class=\"w-full border border-gray-300 rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500\" placeholder=\"Enter new list name\">\r\n              </div>\r\n              <button type=\"submit\" class=\"w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\">Save</button>\r\n          </form>\r\n      </div>\r\n  </div>\r\n\r\n  <div class=\"mt-4 flex flex-row overflow-x-auto\">\r\n    <div *ngFor=\"let list of listMas\" class=\"flex-shrink-0 mr-2 mb-2\">\r\n      <div class=\"border rounded-md p-4 flex flex-col\">\r\n        <div class=\"flex justify-between items-center\">\r\n          <p class=\"text-lg font-semibold\">{{ list.statusName }}</p>\r\n          <div class=\"relative inline-block text-left\">\r\n            <button type=\"button\" (click)=\"toggleMenu(list)\" class=\"inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50\" id=\"menu-button\" [attr.aria-expanded]=\"isMenuOpen[list.listId]?.toString()\" aria-haspopup=\"true\">\r\n              <svg class=\"-mr-1 h-5 w-5 text-gray-400\" viewBox=\"0 0 20 20\" fill=\"currentColor\" aria-hidden=\"true\">\r\n                <path fill-rule=\"evenodd\" d=\"M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z\" clip-rule=\"evenodd\"/>\r\n              </svg>\r\n            </button>\r\n            <div *ngIf=\"isMenuOpen[list.listId]\" class=\"absolute right-0 mt-2 w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none\" style=\"z-index: 998;\">\r\n              <div class=\"py-1\" role=\"none\">\r\n                <button (click)=\"openEditModal(list.listId, list.statusName)\" class=\"text-gray-700 block px-4 py-2 text-sm w-full text-left\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-0\">Edit</button>\r\n                <button (click)=\"deleteListNgOnInit(list)\" class=\"text-gray-700 block px-4 py-2 text-sm w-full text-left\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-1\"><p style=\"color: red;\">Delete</p></button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div>\r\n          <app-card [boardId]=\"boardId\" [listId]=\"list.listId\" [listsName]=\"listsName\"></app-card>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-d32b0f19628254ea3fc5526c4d4564ada1cc83cf936759006d90a46f5874b02a3359e331bddda20b22e74a616a6443c660602ba74dd38ebe1160759e0de6f7ba",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\n.storybook-page h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\n.storybook-page ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.storybook-page .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient()]\r\n}"
+            },
+            {
+                "name": "bootstrap",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+            },
+            {
+                "name": "serverConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient()]\r\n}"
+                }
+            ],
+            "src/main.server.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/app.config.server.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+                },
+                {
+                    "name": "serverConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideServerRendering()\r\n  ]\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 3,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "serverConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/boards/board.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BoardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/cards/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/26",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/histories/history.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HistoryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/lists/list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/22",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/board.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IBoard",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/card.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ICard",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/history.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IHistory",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/list.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IList",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/requests/createboard.request.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CreateBoardRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/requests/createcard.request.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CreateCardRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/requests/createlist.request.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CreateListRequest",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/board.sevice.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpBoardService",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/card.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpCardService",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/history.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpHistoryService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/list.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpListService",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.server.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Input } from '@angular/core';
 import { CardComponent } from '../cards/card.component';
+import { ButtonComponent } from '../../../stories/button.component';
 import { Store } from '@ngrx/store';
 import { getlists } from '../ngrx/selectors/list.select';
 import { loadList } from '../ngrx/actions/list.action';
@@ -14,7 +15,7 @@ import { loadList } from '../ngrx/actions/list.action';
 @Component({
     selector: 'app-list',
     standalone: true,
-    imports: [CommonModule, FormsModule, CardComponent],
+    imports: [CommonModule, CardComponent, FormsModule, ButtonComponent],
     templateUrl: './list.component.html'
 })
 
