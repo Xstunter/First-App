@@ -3,3 +3,9 @@ export interface IList{
     statusName : string,
     boardId : number
 }
+
+export interface ListModel{
+    lists : IList[],
+    list : IList,
+    errorMassege : string 
+}

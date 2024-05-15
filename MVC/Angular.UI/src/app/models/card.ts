@@ -6,3 +6,9 @@ export interface ICard{
     listId : number;
     createdAt : string;
 }
+
+export interface CardModel{
+    cards : ICard[],
+    card : ICard,
+    errorMassege : string 
+}
